@@ -10,6 +10,7 @@ const propTypes = {
 class categoryTemplate extends React.Component {
   render() {
     const page = this.props.data.contentfulProjectCategory
+    const projects = this.props.data.allContentfulProject.edges
 
     return (
       <div>
@@ -19,6 +20,14 @@ class categoryTemplate extends React.Component {
               __html: page.description.childMarkdownRemark.html,
             }}
           />
+        <h2>Projects</h2>
+        <ul>
+          {projects.map(project => (
+            <li key={project.node.id}>
+              <Link to={`/work/${project.node.slug}`}>{project.node.title}</Link>
+            </li>
+          ))}
+        </ul>
       </div>
     )
   }
@@ -31,14 +40,27 @@ export default categoryTemplate
 export const categoryQuery = graphql`
   query categoryQuery($id: String!) {
     contentfulProjectCategory(id: { eq: $id }) {
+      id
+      title
+      description {
         id
-        title
-        slug
-        description{
-          childMarkdownRemark {
-            html
+        childMarkdownRemark {
+          id
+          html
+        }
+      }
+    }
+    allContentfulProject(filter: {projectCategory: {id: {eq: $id}}}){
+      edges{
+        node{
+          id
+          title
+          slug
+          projectCategory {
+            id
           }
         }
+      }
     }
   }
 `

@@ -9,7 +9,7 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
     graphql(
       `
         {
-            allContentfulPage{
+            allContentfulPage(filter: { node_locale: { eq: "en" } }){
                 edges{
                     node{
                         id
@@ -41,14 +41,14 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
         graphql(
           `
             {
-                allContentfulProjectCategory {
-                edges {
-                    node {
-                    id
-                    title
-                    slug
-                    }
-                }
+                allContentfulProjectCategory(filter: { node_locale: { eq: "en" } }) {
+                  edges {
+                      node {
+                        id
+                        title
+                        slug
+                      }
+                  }
                 }
             }
           `
