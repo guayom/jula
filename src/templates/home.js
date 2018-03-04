@@ -1,13 +1,12 @@
-import React from "react"
-import Link from "gatsby-link"
+import React from 'react'
+import Link from 'gatsby-link'
 import * as PropTypes from "prop-types"
-import Img from "gatsby-image"
 
 const propTypes = {
   data: PropTypes.object.isRequired,
 }
 
-class PageTemplate extends React.Component {
+class IndexPage extends React.Component {
   render() {
     const page = this.props.data.contentfulPage
 
@@ -20,12 +19,12 @@ class PageTemplate extends React.Component {
   }
 }
 
-PageTemplate.propTypes = propTypes
+IndexPage.propTypes = propTypes
 
-export default PageTemplate
+export default IndexPage
 
-export const pageQuery = graphql`
-  query pageQuery($id: String!) {
+export const homeQuery = graphql`
+  query homeQuery($id: String!) {
     contentfulPage(id: { eq: $id }) {
         id
         title

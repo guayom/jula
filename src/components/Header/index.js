@@ -23,9 +23,38 @@ const Header = () => (
             textDecoration: 'none',
           }}
         >
-          Gatsby
+          Ju-La.com
         </Link>
       </h1>
+      <div>
+        <Link
+            to="/work"
+            style={{
+              color: 'white',
+              textDecoration: 'none',
+            }}
+          >
+            Work
+        </Link> - 
+        <Link
+            to="/about-me"
+            style={{
+              color: 'white',
+              textDecoration: 'none',
+            }}
+          >
+            About Me
+        </Link> - 
+        <Link
+            to="/contact"
+            style={{
+              color: 'white',
+              textDecoration: 'none',
+            }}
+          >
+            Contact
+        </Link>
+      </div>
     </div>
   </div>
 )
