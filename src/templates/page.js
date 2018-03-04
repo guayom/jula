@@ -14,7 +14,11 @@ class PageTemplate extends React.Component {
     return (
       <div>
         <h1>{page.title}</h1>
-        {page.description.description}
+        <div
+            dangerouslySetInnerHTML={{
+              __html: page.description.childMarkdownRemark.html,
+            }}
+          />
       </div>
     )
   }
@@ -30,7 +34,9 @@ export const pageQuery = graphql`
         id
         title
         description {
-          description
+          childMarkdownRemark {
+            html
+          }
         }
     }
   }

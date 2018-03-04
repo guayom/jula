@@ -14,6 +14,11 @@ class categoryTemplate extends React.Component {
     return (
       <div>
         <h1>{page.title}</h1>
+        <div
+            dangerouslySetInnerHTML={{
+              __html: page.description.childMarkdownRemark.html,
+            }}
+          />
       </div>
     )
   }
@@ -29,6 +34,11 @@ export const categoryQuery = graphql`
         id
         title
         slug
+        description{
+          childMarkdownRemark {
+            html
+          }
+        }
     }
   }
 `
