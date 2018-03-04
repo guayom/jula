@@ -25,12 +25,11 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
         if (result.errors) {
           reject(result.errors)
         }
-        const pageTemplate = path.resolve(`./src/templates/page.js`)
-        const homeTemplate = path.resolve(`./src/templates/home.js`)
         _.each(result.data.allContentfulPage.edges, edge => {
+          const pageTemplate = edge.node.slug === "home" || edge.node.slug === "work" ? path.resolve(`./src/templates/${edge.node.slug}.js`) : path.resolve(`./src/templates/page.js`)
           createPage({
             path: edge.node.slug === "home" ? "/" : `/${edge.node.slug}/`,
-            component: edge.node.slug === "home" ? slash(homeTemplate) : slash(pageTemplate),
+            component: slash(pageTemplate),
             context: {
               id: edge.node.id,
             },
