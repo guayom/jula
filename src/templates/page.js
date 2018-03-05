@@ -10,7 +10,7 @@ const propTypes = {
 function Form({slug}){
   if (slug === 'contact') {
     return (
-      <form name="contact" data-netlify-honeypot="country" method="POST" action="thank-you" data-netlify={true}>
+      <form name="contact" data-netlify-honeypot="country" method="POST" action="/thank-you" data-netlify={true}>
         <div style={{display: `none`}}>
           <input name="country" />
           <input type="hidden" name="form-name" value="contact" />
