@@ -33,10 +33,16 @@ class WorkPage extends React.Component {
                     <br/>
                     <h4>Projects:</h4>
                     <ul>
-                        {projects.filter(p => p.node.projectCategory.id === projectCategory.node.id).map(project => (
-                            <li>{project.node.title}</li>
+                        {projects.filter(p => p.node.projectCategory.id === projectCategory.node.id).slice(0, 3).map(project => (
+                            <li>
+                                <Link to={`/work/${project.node.slug}/`}>{project.node.title}</Link>
+                            </li>
                         ))}
                     </ul>
+                    <Link to={`/${projectCategory.node.slug}/`}>View all projects</Link>
+                    <br/>
+                    <br/>
+                    <hr/>
                 </li>
             ))}
         </ul>

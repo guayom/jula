@@ -40,30 +40,45 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
         graphql(
           `
             {
-                allContentfulProjectCategory(filter: { node_locale: { eq: "en" } }) {
-                  edges {
-                      node {
-                        id
-                        title
-                        slug
-                      }
+              allContentfulProjectCategory(filter: { node_locale: { eq: "en" } }) {
+                edges {
+                  node {
+                    id
+                    title
+                    slug
                   }
                 }
+              }
+              allContentfulProject(filter: { node_locale: { eq: "en" } }) {
+                edges {
+                  node {
+                    id
+                    title
+                    slug
+                  }
+                }
+              }
             }
           `
         ).then(result => {
           if (result.errors) {
             reject(result.errors)
           }
-
-          // Create Category pages
           const categoryTemplate = path.resolve(`./src/templates/category.js`)
-          // We want to create a detailed page for each
-          // category node. We'll just use the Contentful id for the slug.
           _.each(result.data.allContentfulProjectCategory.edges, edge => {
             createPage({
               path: `/${edge.node.slug}/`,
               component: slash(categoryTemplate),
+              context: {
+                id: edge.node.id,
+              },
+            })
+          })
+          const projectTemplate = path.resolve(`./src/templates/project.js`)
+          _.each(result.data.allContentfulProject.edges, edge => {
+            createPage({
+              path: `/work/${edge.node.slug}/`,
+              component: slash(projectTemplate),
               context: {
                 id: edge.node.id,
               },
