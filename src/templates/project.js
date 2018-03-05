@@ -21,8 +21,22 @@ function Section({title, content}){
         )
     } else {
         return (null)
-    }
-    
+    }   
+}
+
+function Images({images}) {
+  if (!images) {
+    return <h1>No Images</h1>
+  }
+  return (
+    <div style={{display: `flex`}}>
+      {images.map(image =>(
+        <div style={{flex:`1 0`}}>
+          <Img key={image.id} sizes={image.sizes} />
+        </div>
+      ))}
+    </div>
+  )
 }
 
 class ProjectTemplate extends React.Component {
@@ -49,6 +63,7 @@ class ProjectTemplate extends React.Component {
         {sections.map(c => (
             <Section title={c[1]} content={c[0]} />
         ))}
+        <Images images={project.images}/>
       </div>
     )
   }
@@ -83,6 +98,16 @@ export const projectQuery = graphql`
         projectCategory{
             title
             slug
+        }
+        images{
+          id
+          sizes{
+            srcSet
+            base64
+            aspectRatio
+            src
+            sizes
+          }
         }
         description {
           childMarkdownRemark {
