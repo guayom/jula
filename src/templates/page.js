@@ -1,7 +1,7 @@
 import React from "react"
-import Link from "gatsby-link"
 import * as PropTypes from "prop-types"
-import Img from "gatsby-image"
+import { graphql } from "gatsby";
+import Layout from "../layouts"
 
 const propTypes = {
   data: PropTypes.object.isRequired,

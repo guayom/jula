@@ -23,7 +23,7 @@ const TemplateWrapper = ({ children }) => (
         paddingTop: 0,
       }}
     >
-      {children()}
+      {children}
     </div>
   </div>
 )
