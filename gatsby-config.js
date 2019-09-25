@@ -2,17 +2,16 @@ require('dotenv').config()
 
 module.exports = {
   siteMetadata: {
-    title: 'Ju-La.com',
+    title: "Ju-La.com"
   },
   plugins: [
     {
       resolve: `gatsby-source-contentful`,
       options: {
         spaceId: process.env.SPACE_ID,
-        accessToken: process.env.ACCESS_TOKEN,
-      },
+        accessToken: process.env.ACCESS_TOKEN
+      }
     },
-    `gatsby-transformer-remark`,
-    `gatsby-plugin-styled-components`,
-  ],
+    `gatsby-transformer-remark`
+  ]
 };
