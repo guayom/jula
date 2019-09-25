@@ -8,7 +8,6 @@
     "dotenv": "^4.0.0",
     "gatsby": "^2.15.22",
     "gatsby-image": "^2.2.21",
-    "gatsby-link": "latest",
     "gatsby-plugin-google-analytics": "latest",
     "gatsby-plugin-manifest": "^2.2.18",
     "gatsby-plugin-offline": "^3.0.8",
