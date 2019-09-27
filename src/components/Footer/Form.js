@@ -13,7 +13,7 @@ const schema = yup.object().shape({
 const initialValues = {
   email: "",
   message: "",
-  country: ""
+  country: null
 };
 
 export default () => {
@@ -33,7 +33,7 @@ export default () => {
         fetch("/", {
           method: "POST",
           headers: { "Content-Type": "application/x-www-form-urlencoded" },
-          body: encode({ "form-name": "contact", values })
+          body: encode({ "form-name": "contact", ...values })
         })
           .then(() => {
             setIsSubmitted(true);
@@ -52,7 +52,7 @@ export default () => {
   };
 
   if (isSubmitted && !isSubmitting) {
-    return <div>Thank you!</div>;
+    return <div>Thank you! I'll be in contact shortly</div>;
   } else if (!isSubmitted && isSubmitting) {
     return <div>Submitting...</div>;
   } else {
