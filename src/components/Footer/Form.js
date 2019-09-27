@@ -29,16 +29,19 @@ export default () => {
   const formal = useFormal(initialValues, {
     schema,
     onSubmit: values => {
-      fetch("/", {
-        method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: encode({ "form-name": "contact", values })
-      })
-        .then(() => {
-          setIsSubmitted(true);
-          isSubmitting(false);
+      return new Promise(resolve => {
+        fetch("/", {
+          method: "POST",
+          headers: { "Content-Type": "application/x-www-form-urlencoded" },
+          body: encode({ "form-name": "contact", values })
         })
-        .catch(error => alert(error));
+          .then(() => {
+            setIsSubmitted(true);
+            setIsSubmitting(false);
+            resolve();
+          })
+          .catch(error => alert(error));
+      });
     }
   });
 
