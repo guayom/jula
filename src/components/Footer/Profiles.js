@@ -15,7 +15,6 @@ export default () => {
       }
     }
   `);
-  console.log({data})
   return (
     <React.Fragment>
       {data.profiles.edges.map(({ node: profile }) => (
