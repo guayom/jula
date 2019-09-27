@@ -27,6 +27,16 @@ const Header = () => (
         </Link>
       </h1>
       <Link
+        to="/exxpedition/"
+        style={{
+          color: "white",
+          textDecoration: "none"
+        }}
+      >
+        Exxpedition
+      </Link>{" "}
+      -
+      <Link
         to="/about-me/"
         style={{
           color: "white",

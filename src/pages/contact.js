@@ -48,10 +48,10 @@ function Form({ slug }) {
 
 class PageTemplate extends React.Component {
   render() {
-    const page = this.props.data.contentfulPage;
+    const {page} = this.props.data;
 
     return (
-      <div>
+      <Layout>
         <h1>{page.title}</h1>
         <div
           dangerouslySetInnerHTML={{
@@ -59,7 +59,7 @@ class PageTemplate extends React.Component {
           }}
         />
         <Form slug={page.slug} />
-      </div>
+      </Layout>
     );
   }
 }
@@ -69,8 +69,8 @@ PageTemplate.propTypes = propTypes;
 export default PageTemplate;
 
 export const pageQuery = graphql`
-  query pageQuery($id: String!) {
-    contentfulPage(id: { eq: $id }) {
+  query contactQuery {
+    page: contentfulPage(slug: { eq: "contact" }) {
       id
       title
       slug

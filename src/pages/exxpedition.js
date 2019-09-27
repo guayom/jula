@@ -9,7 +9,7 @@ const propTypes = {
 
 class IndexPage extends React.Component {
   render() {
-    const page = this.props.data.contentfulPage;
+    const { page } = this.props.data;
 
     return (
       <Layout>
@@ -19,6 +19,7 @@ class IndexPage extends React.Component {
             __html: page.description.childMarkdownRemark.html
           }}
         />
+        <pre>{JSON.stringify(page, null, 2)}</pre>
       </Layout>
     );
   }
@@ -29,13 +30,29 @@ IndexPage.propTypes = propTypes;
 export default IndexPage;
 
 export const homeQuery = graphql`
-  query homeQuery($id: String!) {
-    contentfulPage(id: { eq: $id }) {
+  query exxpeditionQuery {
+    page: contentfulPage(slug: { eq: "exxpedition" }) {
       id
       title
       description {
         childMarkdownRemark {
           html
+        }
+      }
+      contentBlocks {
+        ... on ContentfulBanner {
+          id
+          title
+          description {
+            childMarkdownRemark {
+              html
+            }
+          }
+          image {
+            fluid {
+              src
+            }
+          }
         }
       }
     }
