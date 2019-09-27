@@ -21,7 +21,6 @@ class IndexPage extends React.Component {
             __html: page.description.childMarkdownRemark.html
           }}
         />
-        <pre>{JSON.stringify(page, null, 2)}</pre>
       </Layout>
     );
   }
