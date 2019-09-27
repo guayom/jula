@@ -13,7 +13,6 @@ const schema = yup.object().shape({
 const initialValues = {
   email: "",
   message: "",
-  country: null
 };
 
 export default () => {
@@ -59,16 +58,11 @@ export default () => {
     return (
       <form
         name="contact"
-        data-netlify-honeypot="country"
         method="POST"
         action="/thank-you"
         data-netlify={true}
         onSubmit={handleSubmit}
       >
-        <div style={{ display: `none` }}>
-          <input name="country" />
-          <input type="hidden" name="form-name" value="contact" />
-        </div>
         <div>
           <label>Email:</label>
           <br />
