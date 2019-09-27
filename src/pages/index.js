@@ -2,6 +2,7 @@ import React from "react";
 import * as PropTypes from "prop-types";
 import { graphql } from "gatsby";
 import Layout from "../components/Layout";
+import ContentBlocks from "../components/ContentBlocks"
 
 const propTypes = {
   data: PropTypes.object.isRequired
@@ -14,12 +15,7 @@ class IndexPage extends React.Component {
     return (
       <Layout>
         <h1>{page.title}</h1>
-        <div
-          dangerouslySetInnerHTML={{
-            __html: page.description.childMarkdownRemark.html
-          }}
-        />
-        <pre>{JSON.stringify(page, null, 2)}</pre>
+        <ContentBlocks contentBlocks={page.contentBlocks} />
       </Layout>
     );
   }
@@ -50,7 +46,7 @@ export const homeQuery = graphql`
           }
           image {
             fluid {
-              src
+              ...GatsbyContentfulFluid
             }
           }
         }
@@ -65,7 +61,7 @@ export const homeQuery = graphql`
           callToAction
           image {
             fluid {
-              src
+              ...GatsbyContentfulFluid
             }
           }
         }
