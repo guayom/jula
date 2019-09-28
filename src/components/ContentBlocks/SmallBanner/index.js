@@ -5,15 +5,17 @@ import Wrapper from "../../Layout/Wrapper";
 
 export default ({ image, body, link, callToAction }) => (
   <Wrapper>
-    <Flex my={4} mx={-2} flexWrap="wrap">
-      <Box width={[1, 1, 1 / 4]} mx={2}>
+    <Flex my={6} mx={-3} flexWrap={["wrap", "wrap", "nowrap"]}>
+      <Box width={[1, 1, 1 / 4]} mx={3} mb={[3, 3, 0]}>
         <Img fluid={image.fluid} />
       </Box>
-      <Box width={[1, 1, 3 / 4]} mx={2}>
+      <Box width={[1, 1, 3 / 4]} mx={3}>
         <div
           dangerouslySetInnerHTML={{ __html: body.childMarkdownRemark.html }}
         />
-        <Button href={link}>{callToAction}</Button>
+        <Button as="a" target="_blank" rel="noopener noreferrer" href={link}>
+          {callToAction}
+        </Button>
       </Box>
     </Flex>
   </Wrapper>
