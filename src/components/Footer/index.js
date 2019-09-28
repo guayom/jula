@@ -6,11 +6,13 @@ import { Box, Flex, Text } from "rebass";
 
 export default () => {
   return (
-    <Box bg="primary" as="footer" py={4}>
+    <Box bg="primary" as="footer" py={4} mb={[4, 4, 4, 0]}>
       <Wrapper>
         <Flex flexWrap="wrap">
           <Box width={[1, 1, 1 / 2]}>
-            <Text as="h3" color="white">Let's talk</Text>
+            <Text as="h3" color="white">
+              Let's talk
+            </Text>
             <Form />
           </Box>
           <Box width={[1, 1, 1 / 2]}>
