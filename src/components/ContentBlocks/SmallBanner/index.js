@@ -5,7 +5,7 @@ import Wrapper from "../../Layout/Wrapper";
 
 export default ({ image, body, link, callToAction }) => (
   <Wrapper>
-    <Flex my={4} mx={-2}>
+    <Flex my={4} mx={-2} flexWrap="wrap">
       <Box width={[1, 1, 1 / 4]} mx={2}>
         <Img fluid={image.fluid} />
       </Box>
