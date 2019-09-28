@@ -10,11 +10,11 @@ export default ({ title, image, description }) => (
     </Box>
     <Wrapper>
       <h2>{title}</h2>
-      <div
+      {description && <div
         dangerouslySetInnerHTML={{
           __html: description.childMarkdownRemark.html
         }}
-      />
+      />}
     </Wrapper>
   </Flex>
 );
