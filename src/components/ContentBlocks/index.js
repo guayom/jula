@@ -2,11 +2,13 @@ import React from "react";
 import Banner from "./Banner";
 import SmallBanner from "./SmallBanner";
 import ImageGallery from "./ImageGallery";
+import FullScreenBanner from "./FullScreenBanner";
 
 const Components = {
   ContentfulBanner: Banner,
   ContentfulSmallBanner: SmallBanner,
-  ContentfulGallery: ImageGallery
+  ContentfulGallery: ImageGallery,
+  ContentfulFullScreenBanner: FullScreenBanner
 };
 
 export default ({ contentBlocks }) => (

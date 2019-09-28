@@ -16,12 +16,14 @@ class IndexPage extends React.Component {
       <Layout>
         <h1>{page.title}</h1>
         <ContentBlocks contentBlocks={page.contentBlocks} />
-      {page.description && <div
-        dangerouslySetInnerHTML={{
-          __html: page.description.childMarkdownRemark.html
-        }}
-      />}
-</Layout>
+        {page.description && (
+          <div
+            dangerouslySetInnerHTML={{
+              __html: page.description.childMarkdownRemark.html
+            }}
+          />
+        )}
+      </Layout>
     );
   }
 }
@@ -44,11 +46,6 @@ export const homeQuery = graphql`
         ... on ContentfulBanner {
           id
           title
-          description {
-            childMarkdownRemark {
-              html
-            }
-          }
           image {
             fluid {
               ...GatsbyContentfulFluid

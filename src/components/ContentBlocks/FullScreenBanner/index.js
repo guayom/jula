@@ -4,7 +4,11 @@ import { Box, Flex } from "rebass";
 import Wrapper from "../../Layout/Wrapper";
 
 export default ({ title, image, description }) => (
-  <Flex alignItems="center" sx={{ position: `relative`, overflow: "hidden" }}>
+  <Flex
+    height="100vh"
+    alignItems="center"
+    sx={{ position: `relative`, overflow: "hidden" }}
+  >
     <Box
       width="100%"
       height="100%"

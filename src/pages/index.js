@@ -35,7 +35,7 @@ export const homeQuery = graphql`
         }
       }
       contentBlocks {
-        ... on ContentfulBanner {
+        ... on ContentfulFullScreenBanner {
           id
           title
           description {
