@@ -1,6 +1,6 @@
 import React from "react";
 import Img from "gatsby-image";
-import { Box, Flex } from "rebass";
+import { Box, Flex, Text } from "rebass";
 import Wrapper from "../../Layout/Wrapper";
 
 export default ({ title, image, description }) => (
@@ -13,7 +13,9 @@ export default ({ title, image, description }) => (
       <Img fluid={image.fluid} alt={title} />
     </Box>
     <Wrapper>
-      <h2>{title}</h2>
+      <Text as="h2" color="white" mb={3}>
+        {title}
+      </Text>
       {description && (
         <div
           dangerouslySetInnerHTML={{
