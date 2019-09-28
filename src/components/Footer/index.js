@@ -8,7 +8,7 @@ export default () => {
   return (
     <Box bg="primary" as="footer" py={4}>
       <Wrapper>
-        <Flex>
+        <Flex flexWrap="wrap">
           <Box width={[1, 1, 1 / 2]}>
             <Text as="h3" color="white">Let's talk</Text>
             <Form />
