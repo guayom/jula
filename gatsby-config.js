@@ -12,6 +12,7 @@ module.exports = {
         accessToken: process.env.ACCESS_TOKEN
       }
     },
-    `gatsby-transformer-remark`
+    `gatsby-transformer-remark`,
+    `gatsby-plugin-theme-ui`
   ]
 };

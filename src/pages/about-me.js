@@ -3,6 +3,7 @@ import * as PropTypes from "prop-types";
 import { graphql } from "gatsby";
 import Layout from "../components/Layout";
 import ContentBlocks from "../components/ContentBlocks";
+import Wrapper from "../components/Layout/Wrapper";
 
 const propTypes = {
   data: PropTypes.object.isRequired
@@ -14,7 +15,9 @@ class IndexPage extends React.Component {
 
     return (
       <Layout>
-        <h1>{page.title}</h1>
+        <Wrapper>
+          <h1>{page.title}</h1>
+        </Wrapper>
         <ContentBlocks contentBlocks={page.contentBlocks} />
         <div
           dangerouslySetInnerHTML={{

@@ -1,20 +1,10 @@
 import React from "react";
 import { Link } from "gatsby";
-
+import Wrapper from "../Layout/Wrapper";
+import { Box } from "rebass";
 const Header = () => (
-  <div
-    style={{
-      background: "rebeccapurple",
-      marginBottom: "1.45rem"
-    }}
-  >
-    <div
-      style={{
-        margin: "0 auto",
-        maxWidth: 960,
-        padding: "1.45rem 1.0875rem"
-      }}
-    >
+  <Box bg="primary">
+    <Wrapper>
       <h1 style={{ margin: 0 }}>
         <Link
           to="/"
@@ -55,8 +45,8 @@ const Header = () => (
       >
         Contact
       </Link>
-    </div>
-  </div>
+    </Wrapper>
+  </Box>
 );
 
 export default Header;
