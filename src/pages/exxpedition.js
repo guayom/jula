@@ -5,6 +5,7 @@ import Layout from "../components/Layout";
 import ContentBlocks from "../components/ContentBlocks";
 import Wrapper from "../components/Layout/Wrapper";
 import { Box, Flex } from "rebass";
+import DonateButton from "../components/Buttons/DonateButton";
 
 const propTypes = {
   data: PropTypes.object.isRequired
@@ -27,21 +28,32 @@ class IndexPage extends React.Component {
             >
               <Flex
                 width={[1, 1, 1, 1 / 4]}
-                height="200px"
-                bg="primary"
-                justifyContent="center"
-                mx={3}
                 mb={3}
+                flexDirection="column"
+                sx={{ textAlign: `center` }}
               >
-                <img src={logo.file.url} alt={logo.title} />
+                <Flex
+                  mb={4}
+                  bg="#f3f3f3"
+                  justifyContent="center"
+                  mx={3}
+                  height="200px"
+                >
+                  <img src={logo.file.url} alt={logo.title} />
+                </Flex>
+                <Box>
+                  <DonateButton />
+                </Box>
               </Flex>
-              <Box
-                width={[1, 1, 1, 3 / 4]}
-                mx={3}
-                dangerouslySetInnerHTML={{
-                  __html: page.description.childMarkdownRemark.html
-                }}
-              />
+
+              <Box width={[1, 1, 1, 3 / 4]} mx={3}>
+                <Box
+                  dangerouslySetInnerHTML={{
+                    __html: page.description.childMarkdownRemark.html
+                  }}
+                />
+                <DonateButton />
+              </Box>
             </Flex>
           </Wrapper>
         )}
