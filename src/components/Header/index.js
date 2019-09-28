@@ -1,50 +1,55 @@
 import React from "react";
 import { Link } from "gatsby";
 import Wrapper from "../Layout/Wrapper";
-import { Box } from "rebass";
+import { Box, Flex } from "rebass";
+
 const Header = () => (
-  <Box bg="primary">
+  <Box bg="primary" py={3}>
     <Wrapper>
-      <h1 style={{ margin: 0 }}>
+      <Flex>
+        <h1 style={{ margin: 0 }}>
+          <Link
+            to="/"
+            style={{
+              color: "white",
+              textDecoration: "none"
+            }}
+          >
+            Ju-La.com
+          </Link>
+        </h1>
         <Link
-          to="/"
+          ml="auto"
+          mr={0}
+          to="/exxpedition/"
           style={{
             color: "white",
             textDecoration: "none"
           }}
         >
-          Ju-La.com
+          Exxpedition
+        </Link>{" "}
+        -
+        <Link
+          to="/about-me/"
+          style={{
+            color: "white",
+            textDecoration: "none"
+          }}
+        >
+          About Me
+        </Link>{" "}
+        -
+        <Link
+          to="/contact/"
+          style={{
+            color: "white",
+            textDecoration: "none"
+          }}
+        >
+          Contact
         </Link>
-      </h1>
-      <Link
-        to="/exxpedition/"
-        style={{
-          color: "white",
-          textDecoration: "none"
-        }}
-      >
-        Exxpedition
-      </Link>{" "}
-      -
-      <Link
-        to="/about-me/"
-        style={{
-          color: "white",
-          textDecoration: "none"
-        }}
-      >
-        About Me
-      </Link>{" "}
-      -
-      <Link
-        to="/contact/"
-        style={{
-          color: "white",
-          textDecoration: "none"
-        }}
-      >
-        Contact
-      </Link>
+      </Flex>
     </Wrapper>
   </Box>
 );

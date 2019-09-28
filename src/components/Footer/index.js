@@ -1,20 +1,23 @@
 import React from "react";
 import Form from "./Form";
-import Profiles from "./Profiles"
+import Profiles from "./Profiles";
 import Wrapper from "../Layout/Wrapper";
+import { Box, Flex, Text } from "rebass";
 
 export default () => {
-  
   return (
-    <footer>
+    <Box bg="primary" as="footer" py={4}>
       <Wrapper>
-        <div>
-          <h3>Let's talk</h3>
-          <Form />
-        </div>
-        <div>
-          <Profiles />
-        </div>
+        <Flex>
+          <Box width={[1, 1, 1 / 2]}>
+            <Text as="h3" color="white">Let's talk</Text>
+            <Form />
+          </Box>
+          <Box width={[1, 1, 1 / 2]}>
+            <Profiles />
+          </Box>
+        </Flex>
       </Wrapper>
-    </footer>
-  );};
+    </Box>
+  );
+};

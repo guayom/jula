@@ -14,7 +14,6 @@ class IndexPage extends React.Component {
 
     return (
       <Layout>
-        <h1>{page.title}</h1>
         <ContentBlocks contentBlocks={page.contentBlocks} />
       </Layout>
     );
