@@ -18,7 +18,7 @@ class IndexPage extends React.Component {
         <ContentBlocks contentBlocks={page.contentBlocks} />
       {page.description && <div
         dangerouslySetInnerHTML={{
-          __html: description.childMarkdownRemark.html
+          __html: page.description.childMarkdownRemark.html
         }}
       />}
 </Layout>
