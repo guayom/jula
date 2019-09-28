@@ -56,8 +56,6 @@ export const homeQuery = graphql`
               html
             }
           }
-          link
-          callToAction
           image {
             fluid {
               ...GatsbyContentfulFluid
