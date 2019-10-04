@@ -9,5 +9,7 @@ const Icons = {
 
 export default ({ title }) => {
   const Icon = Icons[title] || Icons["Default"];
-  return <Icon />;
+  return (
+      <Icon size={40} />
+  );
 };

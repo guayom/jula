@@ -1,6 +1,8 @@
 import React from "react";
 import ProfileLink from "./ProfileLink";
 import { useStaticQuery, graphql } from "gatsby";
+import { Flex } from "rebass";
+
 export default () => {
   const data = useStaticQuery(graphql`
     query {
@@ -17,9 +19,11 @@ export default () => {
   `);
   return (
     <React.Fragment>
-      {data.profiles.edges.map(({ node: profile }) => (
-        <ProfileLink key={profile.id} {...profile} />
-      ))}
+      <Flex mx={-2}>
+        {data.profiles.edges.map(({ node: profile }) => (
+          <ProfileLink key={profile.id} {...profile} />
+        ))}
+      </Flex>
     </React.Fragment>
   );
 };

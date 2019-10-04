@@ -6,7 +6,7 @@ import { Box, Flex, Text } from "rebass";
 
 export default () => {
   return (
-    <Box bg="primary" as="footer" py={4} mb={[4, 4, 4, 0]}>
+    <Box bg="daintree" as="footer" py={4} mb={[4, 4, 4, 0]}>
       <Wrapper>
         <Flex flexWrap="wrap">
           <Box width={[1, 1, 1 / 2]}>
