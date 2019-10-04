@@ -13,6 +13,19 @@ module.exports = {
       }
     },
     `gatsby-transformer-remark`,
-    `gatsby-plugin-theme-ui`
+    `gatsby-plugin-theme-ui`,
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: "Ju-la.com",
+        short_name: "Jula",
+        start_url: "/",
+        background_color: "#002A3F",
+        theme_color: "#002A3F",
+        display: "standalone",
+        icon: "src/images/Jula_Favicon.png",
+        crossOrigin: `use-credentials`
+      }
+    }
   ]
 };

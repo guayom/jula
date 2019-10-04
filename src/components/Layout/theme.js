@@ -3,7 +3,14 @@ export default {
   colors: {
     text: "#000",
     background: "#fff",
-    primary: "rebeccapurple"
+    primary: "rebeccapurple",
+    daintree: "#002A3F",
+    orient: "#004E84",
+    deepCerulean: "#0477B5",
+    steelBlue: "4680B7",
+    turquoiseBlue: "#59E3D2",
+    brightTurquoise: "#3BFAEE",
+    aeroBlue: "#BEFFF6",
   },
   space: [0, 5, 10, 20, 40, 60, 120, 240]
 };
