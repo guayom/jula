@@ -5,7 +5,7 @@ import HeaderLink from "./HeaderLink";
 import Nav from "./Nav";
 
 const Header = () => (
-  <Box bg="primary" py={3}>
+  <Box bg="daintree" py={3}>
     <Wrapper>
       <Flex alignItems="center">
         <Box ml={-2}>

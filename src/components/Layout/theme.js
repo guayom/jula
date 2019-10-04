@@ -3,7 +3,6 @@ export default {
   colors: {
     text: "#000",
     background: "#fff",
-    primary: "rebeccapurple",
     daintree: "#002A3F",
     orient: "#004E84",
     deepCerulean: "#0477B5",

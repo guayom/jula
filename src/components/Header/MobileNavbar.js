@@ -5,7 +5,7 @@ import Wrapper from "../Layout/Wrapper";
 
 export default () => (
   <Box
-    bg="primary"
+    bg="daintree"
     py={3}
     sx={{
       position: "fixed",
