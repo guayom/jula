@@ -15,6 +15,12 @@ module.exports = {
     `gatsby-transformer-remark`,
     `gatsby-plugin-theme-ui`,
     {
+      resolve: `gatsby-plugin-typography`,
+      options: {
+        pathToConfigModule: `src/utils/typography`
+      }
+    },
+    {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: "Ju-la.com",
