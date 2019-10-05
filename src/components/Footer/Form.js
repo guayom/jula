@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import * as yup from "yup";
 import useFormal from "@kevinwolf/formal";
+import { Box, Button, Text } from "rebass";
 
 const schema = yup.object().shape({
   message: yup.string().required(),
@@ -64,28 +65,37 @@ export default () => {
         onSubmit={handleSubmit}
       >
         <div>
-          <label>Email:</label>
-          <br />
-          <input
+          <Text as="label" color="white">
+            Email:
+          </Text>
+          <Box
+            as="input"
             type="email"
             name="email"
             value={formal.values.email}
             onChange={e => formal.change("email", e.target.value)}
+            width={1}
+            sx={{ border: "none" }}
+            mb={3}
           />
           {formal.errors.email && <div>{formal.errors.email}</div>}
         </div>
         <div>
-          <label>Message:</label>
-          <br />
-          <textarea
+          <Text as="label" color="white">
+            Message:
+          </Text>
+          <Box
+            as="textarea"
             name="message"
             value={formal.values.message}
             onChange={e => formal.change("message", e.target.value)}
+            sx={{ border: "none" }}
+            width={1}
           />
           {formal.errors.message && <div>{formal.errors.message}</div>}
         </div>
         <div>
-          <button type="submit">Send</button>
+          <Button type="submit">Send</Button>
         </div>
       </form>
     );
