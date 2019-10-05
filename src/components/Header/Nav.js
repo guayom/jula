@@ -2,7 +2,7 @@ import React from "react";
 import HeaderLink from "./HeaderLink";
 
 const NavLinks = [
-  { key: "exxpedition", title: "Exxpedition" },
+  { key: "exxpedition", title: "eXXpedition" },
   { key: "about-me", title: "About me" }
 ];
 

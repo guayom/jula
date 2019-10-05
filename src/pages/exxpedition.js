@@ -34,10 +34,8 @@ class IndexPage extends React.Component {
               >
                 <Flex
                   mb={4}
-                  bg="#f3f3f3"
                   justifyContent="center"
                   mx={3}
-                  height="200px"
                 >
                   <img src={logo.file.url} alt={logo.title} />
                 </Flex>
@@ -88,7 +86,7 @@ export const homeQuery = graphql`
         }
       }
     }
-    logo: contentfulAsset(title: { eq: "Exxpedition Logo" }) {
+    logo: contentfulAsset(title: { eq: "Crew member logo" }) {
       id
       title
       file {
