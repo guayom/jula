@@ -1366,6 +1366,13 @@
   dependencies:
     defer-to-connect "^1.0.1"
 
+"@tanem/svg-injector@^8.0.33":
+  version "8.0.33"
+  resolved "https://registry.yarnpkg.com/@tanem/svg-injector/-/svg-injector-8.0.33.tgz#df26697bf9735e7da57968b0397ee0613de684fb"
+  integrity sha512-adpLvV4RXAxzI2H9s6ESHZZX55Z3OMHCq2xm61J+ZBchiZUQhnQL4AIV4kteKcxeBxWr6yTcK6irByyo2NzMtQ==
+  dependencies:
+    "@babel/runtime" "^7.6.2"
+
 "@types/configstore@^2.1.1":
   version "2.1.1"
   resolved "https://registry.yarnpkg.com/@types/configstore/-/configstore-2.1.1.tgz#cd1e8553633ad3185c3f2f239ecff5d2643e92b6"
@@ -10516,6 +10523,15 @@ react-side-effect@^1.1.0:
   dependencies:
     exenv "^1.2.1"
     shallowequal "^1.0.1"
+
+react-svg@^10.0.22:
+  version "10.0.22"
+  resolved "https://registry.yarnpkg.com/react-svg/-/react-svg-10.0.22.tgz#be8b32a3276e187997cc6eb5b8f88929c5ef16c9"
+  integrity sha512-L8FFiaaK/wzewAQgEIO3FHyEWSMb5Vjk0sxzmsw5zGJbpakvEqTXsAYA3y+HS0gOv0vu1eKqEx43fdqBRvJuTQ==
+  dependencies:
+    "@babel/runtime" "^7.6.2"
+    "@tanem/svg-injector" "^8.0.33"
+    prop-types "^15.7.2"
 
 react-typography@^0.15.10:
   version "0.15.10"
