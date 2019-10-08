@@ -19,7 +19,10 @@ export default () => {
   `);
   return (
     <React.Fragment>
-      <Flex mx={-2}>
+      <Flex
+        mx={-2}
+        justifyContent={["flex-start", "flex-start", "flex-end"]}
+      >
         {data.profiles.edges.map(({ node: profile }) => (
           <ProfileLink key={profile.id} {...profile} />
         ))}
