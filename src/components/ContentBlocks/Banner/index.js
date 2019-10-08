@@ -17,9 +17,11 @@ export default ({ title, image, description }) => (
       <Img fluid={image.fluid} alt={title} />
     </Box>
     <Wrapper>
-      <Text as="h2" color="white" mb={3}>
-        {title}
-      </Text>
+      {title !== "eXXpedition" && (
+        <Text as="h2" color="white" mb={3}>
+          {title}
+        </Text>
+      )}
       {description && (
         <div
           dangerouslySetInnerHTML={{
