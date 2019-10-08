@@ -15,26 +15,19 @@ const AboutPage = ({ data }) => {
   return (
     <Layout>
       <Wrapper>
+        <Box mt={4}>
+          <h1>{page.title}</h1>
+        </Box>
         <Flex flexWrap={["wrap", "wrap", "wrap", "nowrap"]} mx={-3} my={4}>
-          <Box
-            order={1}
-            width={[1, 1, 1, 1 / 4]}
-            mx={3}
-          >
-            <ContentBlocks contentBlocks={page.contentBlocks} />
-          </Box>
-          <Box
-            order={[-1, -1, -1, 2]}
-            mb={4}
-            mx={3}
-            width={[1, 1, 1, 3 / 4]}
-          >
-            <h1>{page.title}</h1>
+          <Box mb={4} mx={3} width={[1, 1, 1, 2 / 3]}>
             <div
               dangerouslySetInnerHTML={{
                 __html: page.description.childMarkdownRemark.html
               }}
             />
+          </Box>
+          <Box width={[1, 1, 1, 1 / 3]} mx={3}>
+            <ContentBlocks contentBlocks={page.contentBlocks} />
           </Box>
         </Flex>
       </Wrapper>
