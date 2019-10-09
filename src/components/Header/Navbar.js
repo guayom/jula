@@ -12,7 +12,7 @@ const Navbar = () => (
         <h1 style={{ margin: 0 }}>
           <Link to="/">
             <ReactSVG
-              src="jula-logo.svg"
+              src="/jula-logo.svg"
               alt="Ju-la.com"
               beforeInjection={svg => {
                 svg.classList.add("svg-class-name");
