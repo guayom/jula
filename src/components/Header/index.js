@@ -1,38 +1,26 @@
 import React from "react";
-import Wrapper from "../Layout/Wrapper";
-import { Box, Flex } from "rebass";
-import Nav from "./Nav";
-import ReactSVG from "react-svg";
-import Link from "gatsby-link";
+import { Box } from "rebass";
+import Navbar from "./Navbar";
 
-const Header = () => (
-  <Box bg="daintree" py={3}>
-    <Wrapper>
-      <Flex alignItems="center">
-        <Box ml={-2} width={["100px","100px","150px"]}>
-          <h1 style={{ margin: 0 }}>
-            <Link to="/">
-              <ReactSVG
-                src="jula-logo.svg"
-                alt="Ju-la.com"
-                beforeInjection={svg => {
-                  svg.classList.add("svg-class-name");
-                  svg.setAttribute("style", "fill: white");
-                }}
-              />
-            </Link>
-          </h1>
-        </Box>
-        <Box
-          ml="auto"
-          mr={-2}
-          sx={{ display: ["none", "none", "none", "flex"] }}
-        >
-          <Nav />
-        </Box>
-      </Flex>
-    </Wrapper>
-  </Box>
-);
+const Header = ({ transparent, innerRef }) => {
+  const defaultStyles = {};
+  const transparentStyles = {
+    position: `absolute`,
+    top: 0,
+    left: 0,
+    right: 0,
+    zIndex: 99
+  };
+  return (
+    <Box
+      bg={transparent ? "transparent" : "daintree"}
+      py={3}
+      style={transparent ? transparentStyles : defaultStyles}
+      ref={innerRef}
+    >
+      <Navbar />
+    </Box>
+  );
+};
 
 export default Header;

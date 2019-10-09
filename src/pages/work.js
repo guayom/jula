@@ -9,7 +9,7 @@ const propTypes = {
   data: PropTypes.object.isRequired
 };
 
-const AboutPage = ({ data }) => {
+const WorkPage = ({ data }) => {
   const { page } = data;
   return (
     <Layout>
@@ -27,11 +27,11 @@ const AboutPage = ({ data }) => {
   );
 };
 
-AboutPage.propTypes = propTypes;
+WorkPage.propTypes = propTypes;
 
-export default AboutPage;
+export default WorkPage;
 
-export const aboutQuery = graphql`
+export const workQuery = graphql`
   query workQuery {
     page: contentfulPage(slug: { eq: "work" }) {
       id

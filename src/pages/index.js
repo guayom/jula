@@ -13,7 +13,7 @@ class IndexPage extends React.Component {
     const { page } = this.props.data;
 
     return (
-      <Layout>
+      <Layout transparent>
         <ContentBlocks contentBlocks={page.contentBlocks} />
       </Layout>
     );

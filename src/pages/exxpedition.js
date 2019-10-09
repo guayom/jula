@@ -16,7 +16,7 @@ class IndexPage extends React.Component {
     const { page, logo } = this.props.data;
 
     return (
-      <Layout>
+      <Layout transparent>
         <ContentBlocks contentBlocks={page.contentBlocks} />
         {page.description && (
           <Wrapper>
