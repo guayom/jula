@@ -95,7 +95,7 @@ export default () => {
           {formal.errors.message && <div>{formal.errors.message}</div>}
         </div>
         <div>
-          <Button type="submit" bg="turquoiseBlue">
+          <Button type="submit" bg="turquoise">
             Send
           </Button>
         </div>

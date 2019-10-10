@@ -21,7 +21,7 @@ export default () => {
       target="_blank"
       rel="noopener noreferrer"
       href={data.contentfulProfile.link}
-      bg="turquoiseBlue"
+      bg="turquoise"
     >
       {data.contentfulProfile.callToAction}
     </Button>
