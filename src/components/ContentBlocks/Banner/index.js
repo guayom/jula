@@ -6,7 +6,7 @@ import Wrapper from "../../Layout/Wrapper";
 export default ({ title, image, description }) => (
   <Flex
     alignItems="center"
-    height={["300px", "300px", "400px"]}
+    height={["300px", "300px", "600px"]}
     sx={{ position: `relative`, overflow: "hidden" }}
   >
     <Box
@@ -14,7 +14,18 @@ export default ({ title, image, description }) => (
       height="100%"
       sx={{ position: `absolute`, top: 0, left: 0, zIndex: -1 }}
     >
-      <Img fluid={image.fluid} alt={title} />
+      <Img
+        fluid={image.fluid}
+        alt={title}
+        style={{
+          position: "absolute",
+          left: 0,
+          top: 0,
+          width: "100%",
+          height: "100%",
+          zIndex: -1
+        }}
+      />
     </Box>
     <Wrapper>
       {title !== "eXXpedition" && (
