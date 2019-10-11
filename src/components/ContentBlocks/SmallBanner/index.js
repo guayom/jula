@@ -14,7 +14,7 @@ export default ({ image, body, link, callToAction, linkToProfile }) => (
       <Box width={[1, 1, 1 / 4]} mx={[0, 0, 0, 3]} mb={[4, 4, 0]}>
         <Img
           fluid={image.fluid}
-          style={{ maxWidth: `200px`, margin: `0 auto` }}
+          style={{ maxWidth: `150px`, margin: `0 auto` }}
         />
       </Box>
       <Box width={[1, 1, 3 / 4]} mx={[0, 0, 0, 3]}>

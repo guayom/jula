@@ -28,12 +28,17 @@ class IndexPage extends React.Component {
             >
               <Flex
                 width={[1, 1, 1, 1 / 4]}
-                mb={3}
+                mt={[4, 4, 4, 0]}
+                mb={[4,4,4,3]}
                 flexDirection="column"
                 sx={{ textAlign: `center` }}
               >
-                <Flex mb={4} justifyContent="center" mx={3}>
-                  <img src={logo.file.url} alt={logo.title} />
+                <Flex mb={[3,3,3,4]} justifyContent="center" mx={3}>
+                  <img
+                    src={logo.file.url}
+                    alt={logo.title}
+                    style={{ maxWidth: `150px`, margin: `0 auto` }}
+                  />
                 </Flex>
                 <Box>
                   <DonateButton />
