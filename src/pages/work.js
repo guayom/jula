@@ -3,7 +3,7 @@ import * as PropTypes from "prop-types";
 import { graphql } from "gatsby";
 import Layout from "../components/Layout";
 import Wrapper from "../components/Layout/Wrapper";
-import { Box } from "rebass";
+import { Flex } from "rebass";
 
 const propTypes = {
   data: PropTypes.object.isRequired
@@ -14,14 +14,23 @@ const WorkPage = ({ data }) => {
   return (
     <Layout>
       <Wrapper>
-        <Box mt={4}>
+        <Flex
+          mt={4}
+          sx={{
+            minHeight: [`30vh`, `30vh`, `30vh`, `50vh`],
+            textAlign: "center"
+          }}
+          alignItems="center"
+          flexDirection="column"
+          justifyContent="center"
+        >
           <h1>{page.title}</h1>
           <div
             dangerouslySetInnerHTML={{
               __html: page.description.childMarkdownRemark.html
             }}
           />
-        </Box>
+        </Flex>
       </Wrapper>
     </Layout>
   );
