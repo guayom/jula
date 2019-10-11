@@ -24,7 +24,7 @@ class IndexPage extends React.Component {
               pt={[3, 3, 3, 4]}
               pb={5}
               flexWrap={["wrap", "wrap", "wrap", "nowrap"]}
-              mx={-3}
+              mx={[0, 0, 0, -3]}
             >
               <Flex
                 width={[1, 1, 1, 1 / 4]}
@@ -32,11 +32,7 @@ class IndexPage extends React.Component {
                 flexDirection="column"
                 sx={{ textAlign: `center` }}
               >
-                <Flex
-                  mb={4}
-                  justifyContent="center"
-                  mx={3}
-                >
+                <Flex mb={4} justifyContent="center" mx={3}>
                   <img src={logo.file.url} alt={logo.title} />
                 </Flex>
                 <Box>

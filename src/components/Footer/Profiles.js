@@ -20,7 +20,7 @@ export default () => {
   return (
     <React.Fragment>
       <Flex
-        mx={-2}
+        mx={[0, 0, 0, -3]}
         justifyContent={["flex-start", "flex-start", "flex-end"]}
       >
         {data.profiles.edges.map(({ node: profile }) => (
