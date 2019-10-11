@@ -44,7 +44,7 @@ export const homeQuery = graphql`
             }
           }
           image {
-            fluid {
+            fluid(quality: 100) {
               ...GatsbyContentfulFluid
             }
           }

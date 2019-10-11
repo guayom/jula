@@ -14,6 +14,8 @@ module.exports = {
     },
     `gatsby-transformer-remark`,
     `gatsby-plugin-theme-ui`,
+    `gatsby-transformer-sharp`, 
+    `gatsby-plugin-sharp`,
     // {
     //   resolve: `gatsby-plugin-typography`,
     //   options: {

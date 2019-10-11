@@ -1,44 +1,41 @@
 import React from "react";
-import Img from "gatsby-image";
-import { Box, Flex, Text } from "rebass";
+import { Flex, Text } from "rebass";
 import Wrapper from "../../Layout/Wrapper";
+import BackgroundImage from "gatsby-background-image";
 
 export default ({ title, image, description }) => (
   <Flex
-    height="100vh"
-    alignItems="center"
-    sx={{ position: `relative`, overflow: "hidden" }}
+    sx={{
+      width: "100%",
+      backgroundPosition: `bottom right`,
+      backgroundRepeat: `repeat-y`,
+      backgroundSize: `cover`,
+    }}
   >
-    <Box
-      width="100%"
-      height="100%"
-      sx={{ position: `absolute`, top: 0, left: 0, zIndex: -1 }}
+    <BackgroundImage
+      Tag="section"
+      fluid={image.fluid}
+      backgroundColor={`#040e18`}
+      style={{
+        backgroundPosition: "20% 30%",
+        width: "100%"
+      }}
     >
-      <Img
-        fluid={image.fluid}
-        alt={title}
-        style={{
-          position: "absolute",
-          left: 0,
-          top: 0,
-          width: "100%",
-          height: "100%",
-          zIndex: -1
-        }}
-      />
-    </Box>
-    <Wrapper>
-      <Text as="h2" color="white" mb={3}>
-        {title}
-      </Text>
-      {description && (
-        <Text
-          color="white"
-          dangerouslySetInnerHTML={{
-            __html: description.childMarkdownRemark.html
-          }}
-        />
-      )}
-    </Wrapper>
+      <Flex height="100vh" alignItems="center">
+        <Wrapper>
+          <Text as="h2" color="white" mb={3}>
+            {title}
+          </Text>
+          {description && (
+            <Text
+              color="white"
+              dangerouslySetInnerHTML={{
+                __html: description.childMarkdownRemark.html
+              }}
+            />
+          )}
+        </Wrapper>
+      </Flex>
+    </BackgroundImage>
   </Flex>
 );
