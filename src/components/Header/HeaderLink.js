@@ -1,10 +1,11 @@
 import React from "react";
-import Link from "gatsby-link";
 import {Box} from "rebass";
+import AniLink from "gatsby-plugin-transition-link/AniLink";
 
 export default ({ to, children }) => (
   <Box mx={2}>
-    <Link
+    <AniLink
+      fade
       to={to}
       style={{
         color: "white",
@@ -12,6 +13,6 @@ export default ({ to, children }) => (
       }}
     >
       {children}
-    </Link>
+    </AniLink>
   </Box>
 );
