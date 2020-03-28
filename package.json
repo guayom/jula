@@ -48,11 +48,17 @@
     "start": "gatsby develop",
     "build": "gatsby build",
     "develop": "gatsby develop",
-    "format": "prettier --trailing-comma es5 --no-semi --single-quote --write \"src/**/*.js\"",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "reset": "rm -R node_modules && rm -R .cache && yarn install"
+    "format": "prettier --write \"src/**/*.+(js|jsx)\"",
+    "lint": "eslint .",
+    "lint:fix": "eslint --fix .",
+    "reset": "rm -R node_modules && rm -R .cache && yarn install",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
-    "prettier": "^1.18.2"
+    "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.10.1",
+    "eslint-plugin-prettier": "^3.1.2",
+    "eslint-plugin-react": "^7.19.0",
+    "prettier": "^2.0.2"
   }
 }
