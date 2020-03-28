@@ -3,12 +3,13 @@ import { graphql } from "gatsby";
 import Layout from "../components/Layout";
 import Wrapper from "../components/Layout/Wrapper";
 import Summary from "../components/Blog/summary";
+import PageTitle from "../components/page-title";
 
 export default ({ data: { posts }}) => {
     return (
         <Layout>
             <Wrapper>
-                <h1>Blog</h1>
+                <PageTitle>Blog</PageTitle>
                 { posts.edges.map(({node}) => <Summary key={node.id} {...node} />)}
             </Wrapper>
         </Layout>

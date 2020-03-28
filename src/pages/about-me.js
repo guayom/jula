@@ -5,6 +5,7 @@ import Layout from "../components/Layout";
 import ContentBlocks from "../components/ContentBlocks";
 import Wrapper from "../components/Layout/Wrapper";
 import { Box, Flex } from "rebass";
+import PageTitle from "../components/page-title";
 
 const propTypes = {
   data: PropTypes.object.isRequired
@@ -15,9 +16,7 @@ const AboutPage = ({ data }) => {
   return (
     <Layout>
       <Wrapper>
-        <Box mt={4}>
-          <h1>{page.title}</h1>
-        </Box>
+        <PageTitle>About me</PageTitle>
         <Flex
           flexWrap={["wrap", "wrap", "wrap", "nowrap"]}
           mx={[0, 0, 0, -3]}

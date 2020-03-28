@@ -4,6 +4,7 @@ import HeaderLink from "./HeaderLink";
 const NavLinks = [
   { key: "exxpedition", title: "eXXpedition" },
   { key: "work", title: "Work" },
+  { key: "blog", title: "Blog" },
   { key: "about-me", title: "About me" }
 ];
 

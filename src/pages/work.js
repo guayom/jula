@@ -3,7 +3,7 @@ import * as PropTypes from "prop-types";
 import { graphql } from "gatsby";
 import Layout from "../components/Layout";
 import Wrapper from "../components/Layout/Wrapper";
-import { Box } from "rebass";
+import PageTitle from "../components/page-title";
 
 const propTypes = {
   data: PropTypes.object.isRequired
@@ -14,14 +14,12 @@ const WorkPage = ({ data }) => {
   return (
     <Layout>
       <Wrapper>
-        <Box mt={4}>
-          <h1>{page.title}</h1>
-          <div
-            dangerouslySetInnerHTML={{
-              __html: page.description.childMarkdownRemark.html
-            }}
-          />
-        </Box>
+        <PageTitle>{page.title}</PageTitle>
+        <div
+          dangerouslySetInnerHTML={{
+            __html: page.description.childMarkdownRemark.html
+          }}
+        />
       </Wrapper>
     </Layout>
   );
