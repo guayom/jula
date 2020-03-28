@@ -1,7 +1,5 @@
-import React from 'react';
+import React from "react"
 
-export default ({ childMarkdownRemark: {html} }) => {
-    return(
-        <div dangerouslySetInnerHTML={{ __html: html }} />
-    );
-};
+export default ({ childMarkdownRemark: { html } }) => {
+  return <div dangerouslySetInnerHTML={{ __html: html }} />
+}
