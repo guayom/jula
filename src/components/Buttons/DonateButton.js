@@ -1,6 +1,6 @@
-import React from "react";
-import { Button } from "rebass";
-import { useStaticQuery, graphql } from "gatsby";
+import React from "react"
+import { Button } from "rebass"
+import { useStaticQuery, graphql } from "gatsby"
 
 export default () => {
   const data = useStaticQuery(graphql`
@@ -14,7 +14,7 @@ export default () => {
         callToAction
       }
     }
-  `);
+  `)
   return (
     <Button
       as="a"
@@ -25,5 +25,5 @@ export default () => {
     >
       {data.contentfulProfile.callToAction}
     </Button>
-  );
-};
+  )
+}

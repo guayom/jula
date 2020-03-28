@@ -1,16 +1,16 @@
-import React from "react";
-import { Box } from "rebass";
-import Navbar from "./Navbar";
+import React from "react"
+import { Box } from "rebass"
+import Navbar from "./Navbar"
 
 const Header = ({ transparent, innerRef }) => {
-  const defaultStyles = {};
+  const defaultStyles = {}
   const transparentStyles = {
     position: `absolute`,
     top: 0,
     left: 0,
     right: 0,
-    zIndex: 99
-  };
+    zIndex: 99,
+  }
   return (
     <Box
       bg={transparent ? "transparent" : "daintree"}
@@ -20,7 +20,7 @@ const Header = ({ transparent, innerRef }) => {
     >
       <Navbar />
     </Box>
-  );
-};
+  )
+}
 
-export default Header;
+export default Header

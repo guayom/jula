@@ -1,20 +1,20 @@
-require('dotenv').config()
+require("dotenv").config()
 
 module.exports = {
   siteMetadata: {
-    title: "Ju-La.com"
+    title: "Ju-La.com",
   },
   plugins: [
     {
       resolve: `gatsby-source-contentful`,
       options: {
         spaceId: process.env.SPACE_ID,
-        accessToken: process.env.ACCESS_TOKEN
-      }
+        accessToken: process.env.ACCESS_TOKEN,
+      },
     },
     `gatsby-transformer-remark`,
     `gatsby-plugin-theme-ui`,
-    `gatsby-transformer-sharp`, 
+    `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     // {
     //   resolve: `gatsby-plugin-typography`,
@@ -32,8 +32,8 @@ module.exports = {
         theme_color: "#002A3F",
         display: "standalone",
         icon: "src/images/Jula_Favicon.png",
-        crossOrigin: `use-credentials`
-      }
-    }
-  ]
-};
+        crossOrigin: `use-credentials`,
+      },
+    },
+  ],
+}

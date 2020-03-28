@@ -1,28 +1,28 @@
-import React from "react";
-import * as PropTypes from "prop-types";
-import { graphql } from "gatsby";
-import Layout from "../components/Layout";
+import React from "react"
+import * as PropTypes from "prop-types"
+import { graphql } from "gatsby"
+import Layout from "../components/Layout"
 import ContentBlocks from "../components/ContentBlocks"
 
 const propTypes = {
-  data: PropTypes.object.isRequired
-};
+  data: PropTypes.object.isRequired,
+}
 
 class IndexPage extends React.Component {
   render() {
-    const { page } = this.props.data;
+    const { page } = this.props.data
 
     return (
       <Layout transparent>
         <ContentBlocks contentBlocks={page.contentBlocks} />
       </Layout>
-    );
+    )
   }
 }
 
-IndexPage.propTypes = propTypes;
+IndexPage.propTypes = propTypes
 
-export default IndexPage;
+export default IndexPage
 
 export const homeQuery = graphql`
   query homeQuery {
@@ -65,4 +65,4 @@ export const homeQuery = graphql`
       }
     }
   }
-`;
+`

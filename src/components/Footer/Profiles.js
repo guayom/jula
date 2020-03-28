@@ -1,7 +1,7 @@
-import React from "react";
-import ProfileLink from "./ProfileLink";
-import { useStaticQuery, graphql } from "gatsby";
-import { Flex } from "rebass";
+import React from "react"
+import ProfileLink from "./ProfileLink"
+import { useStaticQuery, graphql } from "gatsby"
+import { Flex } from "rebass"
 
 export default () => {
   const data = useStaticQuery(graphql`
@@ -16,7 +16,7 @@ export default () => {
         }
       }
     }
-  `);
+  `)
   return (
     <React.Fragment>
       <Flex
@@ -28,5 +28,5 @@ export default () => {
         ))}
       </Flex>
     </React.Fragment>
-  );
-};
+  )
+}

@@ -1,7 +1,7 @@
-import React from "react";
-import { Box } from "rebass";
-import Navbar from "./Navbar";
-import { motion, AnimatePresence } from "framer-motion";
+import React from "react"
+import { Box } from "rebass"
+import Navbar from "./Navbar"
+import { motion, AnimatePresence } from "framer-motion"
 
 const StickyHeader = ({ isVisible }) => {
   return (
@@ -20,7 +20,7 @@ const StickyHeader = ({ isVisible }) => {
                 position: `fixed`,
                 top: 0,
                 left: 0,
-                right: 0
+                right: 0,
               }}
             >
               <Navbar />
@@ -29,7 +29,7 @@ const StickyHeader = ({ isVisible }) => {
         )}
       </AnimatePresence>
     </Box>
-  );
-};
+  )
+}
 
-export default StickyHeader;
+export default StickyHeader

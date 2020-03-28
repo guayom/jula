@@ -1,7 +1,7 @@
-import React from "react";
-import Img from "gatsby-image";
-import { Box, Flex, Text } from "rebass";
-import Wrapper from "../../Layout/Wrapper";
+import React from "react"
+import Img from "gatsby-image"
+import { Box, Flex, Text } from "rebass"
+import Wrapper from "../../Layout/Wrapper"
 
 export default ({ title, image, description }) => (
   <Flex
@@ -23,7 +23,7 @@ export default ({ title, image, description }) => (
           top: 0,
           width: "100%",
           height: "100%",
-          zIndex: -1
+          zIndex: -1,
         }}
       />
     </Box>
@@ -36,10 +36,10 @@ export default ({ title, image, description }) => (
       {description && (
         <div
           dangerouslySetInnerHTML={{
-            __html: description.childMarkdownRemark.html
+            __html: description.childMarkdownRemark.html,
           }}
         />
       )}
     </Wrapper>
   </Flex>
-);
+)

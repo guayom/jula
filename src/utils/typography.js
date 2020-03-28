@@ -1,4 +1,4 @@
-import Typography from "typography";
+import Typography from "typography"
 const typography = new Typography({
   baseFontSize: "18px",
   baseLineHeight: 1.666,
@@ -8,8 +8,8 @@ const typography = new Typography({
     "Segoe UI",
     "Helvetica",
     "Arial",
-    "sans-serif"
+    "sans-serif",
   ],
-  bodyFontFamily: ["Georgia", "serif"]
-});
-export default typography;
+  bodyFontFamily: ["Georgia", "serif"],
+})
+export default typography

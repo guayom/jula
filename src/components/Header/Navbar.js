@@ -1,9 +1,9 @@
-import React from "react";
-import Wrapper from "../Layout/Wrapper";
-import { Box, Flex } from "rebass";
-import Nav from "./Nav";
-import ReactSVG from "react-svg";
-import Link from "gatsby-link";
+import React from "react"
+import Wrapper from "../Layout/Wrapper"
+import { Box, Flex } from "rebass"
+import Nav from "./Nav"
+import ReactSVG from "react-svg"
+import Link from "gatsby-link"
 
 const Navbar = () => (
   <Wrapper>
@@ -14,9 +14,9 @@ const Navbar = () => (
             <ReactSVG
               src="/jula-logo.svg"
               alt="Ju-la.com"
-              beforeInjection={svg => {
-                svg.classList.add("svg-class-name");
-                svg.setAttribute("style", "fill: white");
+              beforeInjection={(svg) => {
+                svg.classList.add("svg-class-name")
+                svg.setAttribute("style", "fill: white")
               }}
             />
           </Link>
@@ -27,6 +27,6 @@ const Navbar = () => (
       </Box>
     </Flex>
   </Wrapper>
-);
+)
 
-export default Navbar;
+export default Navbar

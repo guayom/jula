@@ -1,19 +1,19 @@
-import React from "react";
-import * as PropTypes from "prop-types";
-import { graphql } from "gatsby";
-import Layout from "../components/Layout";
-import ContentBlocks from "../components/ContentBlocks";
-import Wrapper from "../components/Layout/Wrapper";
-import { Box, Flex } from "rebass";
-import DonateButton from "../components/Buttons/DonateButton";
+import React from "react"
+import * as PropTypes from "prop-types"
+import { graphql } from "gatsby"
+import Layout from "../components/Layout"
+import ContentBlocks from "../components/ContentBlocks"
+import Wrapper from "../components/Layout/Wrapper"
+import { Box, Flex } from "rebass"
+import DonateButton from "../components/Buttons/DonateButton"
 
 const propTypes = {
-  data: PropTypes.object.isRequired
-};
+  data: PropTypes.object.isRequired,
+}
 
 class IndexPage extends React.Component {
   render() {
-    const { page, logo } = this.props.data;
+    const { page, logo } = this.props.data
 
     return (
       <Layout transparent>
@@ -29,11 +29,11 @@ class IndexPage extends React.Component {
               <Flex
                 width={[1, 1, 1, 1 / 4]}
                 mt={[4, 4, 4, 0]}
-                mb={[4,4,4,3]}
+                mb={[4, 4, 4, 3]}
                 flexDirection="column"
                 sx={{ textAlign: `center` }}
               >
-                <Flex mb={[3,3,3,4]} justifyContent="center" mx={3}>
+                <Flex mb={[3, 3, 3, 4]} justifyContent="center" mx={3}>
                   <img
                     src={logo.file.url}
                     alt={logo.title}
@@ -48,7 +48,7 @@ class IndexPage extends React.Component {
               <Box width={[1, 1, 1, 3 / 4]} mx={3}>
                 <Box
                   dangerouslySetInnerHTML={{
-                    __html: page.description.childMarkdownRemark.html
+                    __html: page.description.childMarkdownRemark.html,
                   }}
                 />
                 <DonateButton />
@@ -57,13 +57,13 @@ class IndexPage extends React.Component {
           </Wrapper>
         )}
       </Layout>
-    );
+    )
   }
 }
 
-IndexPage.propTypes = propTypes;
+IndexPage.propTypes = propTypes
 
-export default IndexPage;
+export default IndexPage
 
 export const homeQuery = graphql`
   query exxpeditionQuery {
@@ -101,4 +101,4 @@ export const homeQuery = graphql`
       }
     }
   }
-`;
+`

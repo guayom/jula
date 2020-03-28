@@ -1,7 +1,7 @@
-import React from "react";
-import Nav from "./Nav";
-import { Box, Flex } from "rebass";
-import Wrapper from "../Layout/Wrapper";
+import React from "react"
+import Nav from "./Nav"
+import { Box, Flex } from "rebass"
+import Wrapper from "../Layout/Wrapper"
 
 export default () => (
   <Box
@@ -21,4 +21,4 @@ export default () => (
       </Flex>
     </Wrapper>
   </Box>
-);
+)

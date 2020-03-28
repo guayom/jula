@@ -1,6 +1,6 @@
-import React from "react";
-import Link from "gatsby-link";
-import {Box} from "rebass";
+import React from "react"
+import Link from "gatsby-link"
+import { Box } from "rebass"
 
 export default ({ to, children }) => (
   <Box mx={2}>
@@ -8,10 +8,10 @@ export default ({ to, children }) => (
       to={to}
       style={{
         color: "white",
-        textDecoration: "none"
+        textDecoration: "none",
       }}
     >
       {children}
     </Link>
   </Box>
-);
+)

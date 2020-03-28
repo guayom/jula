@@ -1,33 +1,33 @@
-import React from "react";
-import * as PropTypes from "prop-types";
-import { graphql } from "gatsby";
-import Layout from "../components/Layout";
-import Wrapper from "../components/Layout/Wrapper";
-import PageTitle from "../components/page-title";
+import React from "react"
+import * as PropTypes from "prop-types"
+import { graphql } from "gatsby"
+import Layout from "../components/Layout"
+import Wrapper from "../components/Layout/Wrapper"
+import PageTitle from "../components/page-title"
 
 const propTypes = {
-  data: PropTypes.object.isRequired
-};
+  data: PropTypes.object.isRequired,
+}
 
 const WorkPage = ({ data }) => {
-  const { page } = data;
+  const { page } = data
   return (
     <Layout>
       <Wrapper>
         <PageTitle>{page.title}</PageTitle>
         <div
           dangerouslySetInnerHTML={{
-            __html: page.description.childMarkdownRemark.html
+            __html: page.description.childMarkdownRemark.html,
           }}
         />
       </Wrapper>
     </Layout>
-  );
-};
+  )
+}
 
-WorkPage.propTypes = propTypes;
+WorkPage.propTypes = propTypes
 
-export default WorkPage;
+export default WorkPage
 
 export const workQuery = graphql`
   query workQuery {
@@ -41,4 +41,4 @@ export const workQuery = graphql`
       }
     }
   }
-`;
+`

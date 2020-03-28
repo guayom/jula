@@ -10,7 +10,7 @@ export default {
     turquoiseBlue: "#59E3D2",
     brightTurquoise: "#3BFAEE",
     aeroBlue: "#BEFFF6",
-    turquoise: "#2AD1BC"
+    turquoise: "#2AD1BC",
   },
-  space: [0, 5, 10, 20, 40, 60, 120, 240]
-};
+  space: [0, 5, 10, 20, 40, 60, 120, 240],
+}

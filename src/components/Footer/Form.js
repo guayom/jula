@@ -1,60 +1,57 @@
-import React, { useState } from "react";
-import * as yup from "yup";
-import useFormal from "@kevinwolf/formal";
-import { Box, Button, Text } from "rebass";
+import React, { useState } from "react"
+import * as yup from "yup"
+import useFormal from "@kevinwolf/formal"
+import { Box, Button, Text } from "rebass"
 
 const schema = yup.object().shape({
   message: yup.string().required(),
-  email: yup
-    .string()
-    .email()
-    .required()
-});
+  email: yup.string().email().required(),
+})
 
 const initialValues = {
   email: "",
   message: "",
-};
+}
 
 export default () => {
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [isSubmitted, setIsSubmitted] = useState(false)
 
-  const encode = data => {
+  const encode = (data) => {
     return Object.keys(data)
-      .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
-      .join("&");
-  };
+      .map((key) => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+      .join("&")
+  }
 
   const formal = useFormal(initialValues, {
     schema,
-    onSubmit: values => {
-      return new Promise(resolve => {
+    onSubmit: (values) => {
+      return new Promise((resolve) => {
         fetch("/", {
           method: "POST",
           headers: { "Content-Type": "application/x-www-form-urlencoded" },
-          body: encode({ "form-name": "contact", ...values })
+          body: encode({ "form-name": "contact", ...values }),
         })
           .then(() => {
-            setIsSubmitted(true);
-            setIsSubmitting(false);
-            resolve();
+            setIsSubmitted(true)
+            setIsSubmitting(false)
+            resolve()
           })
-          .catch(error => alert(error));
-      });
-    }
-  });
+          .catch((error) => alert(error))
+      })
+    },
+  })
 
-  const handleSubmit = e => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    formal.submit();
-  };
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    setIsSubmitting(true)
+    formal.submit()
+  }
 
   if (isSubmitted && !isSubmitting) {
-    return <div>Thank you! I'll be in contact shortly</div>;
+    return <div>Thank you! I'll be in contact shortly</div>
   } else if (!isSubmitted && isSubmitting) {
-    return <div>Submitting...</div>;
+    return <div>Submitting...</div>
   } else {
     return (
       <form
@@ -73,7 +70,7 @@ export default () => {
             type="email"
             name="email"
             value={formal.values.email}
-            onChange={e => formal.change("email", e.target.value)}
+            onChange={(e) => formal.change("email", e.target.value)}
             width={1}
             sx={{ border: "none" }}
             mb={3}
@@ -88,7 +85,7 @@ export default () => {
             as="textarea"
             name="message"
             value={formal.values.message}
-            onChange={e => formal.change("message", e.target.value)}
+            onChange={(e) => formal.change("message", e.target.value)}
             sx={{ border: "none" }}
             width={1}
           />
@@ -100,6 +97,6 @@ export default () => {
           </Button>
         </div>
       </form>
-    );
+    )
   }
-};
+}

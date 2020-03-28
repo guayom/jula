@@ -1,7 +1,7 @@
-import React from "react";
-import { Flex, Text } from "rebass";
-import Wrapper from "../../Layout/Wrapper";
-import BackgroundImage from "gatsby-background-image";
+import React from "react"
+import { Flex, Text } from "rebass"
+import Wrapper from "../../Layout/Wrapper"
+import BackgroundImage from "gatsby-background-image"
 
 export default ({ title, image, description }) => (
   <Flex
@@ -18,7 +18,7 @@ export default ({ title, image, description }) => (
       backgroundColor={`#040e18`}
       style={{
         backgroundPosition: "20% 30%",
-        width: "100%"
+        width: "100%",
       }}
     >
       <Flex height="100vh" alignItems="center">
@@ -30,7 +30,7 @@ export default ({ title, image, description }) => (
             <Text
               color="white"
               dangerouslySetInnerHTML={{
-                __html: description.childMarkdownRemark.html
+                __html: description.childMarkdownRemark.html,
               }}
             />
           )}
@@ -38,4 +38,4 @@ export default ({ title, image, description }) => (
       </Flex>
     </BackgroundImage>
   </Flex>
-);
+)

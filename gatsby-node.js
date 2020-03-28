@@ -1,5 +1,5 @@
 async function createBasicPages(graphql, actions, reporter) {
-  const { createPage } = actions;
+  const { createPage } = actions
   const result = await graphql(`
     {
       posts: allContentfulPost(filter: { node_locale: { eq: "en" } }) {
@@ -12,26 +12,26 @@ async function createBasicPages(graphql, actions, reporter) {
         }
       }
     }
-  `);
+  `)
 
-  if (result.errors) throw result.errors;
+  if (result.errors) throw result.errors
 
-  const postEdges = (result.data.posts || {}).edges || [];
+  const postEdges = (result.data.posts || {}).edges || []
 
-  postEdges.forEach(post => {
-    const { id, title, slug } = post.node;
-    const path = `/blog/${slug}`;
+  postEdges.forEach((post) => {
+    const { id, title, slug } = post.node
+    const path = `/blog/${slug}`
 
-    reporter.info(`Creating blog post page: ${title}`);
+    reporter.info(`Creating blog post page: ${title}`)
 
     createPage({
       path,
       component: require.resolve("./src/templates/blog-post.jsx"),
-      context: { id }
-    });
-  });
+      context: { id },
+    })
+  })
 }
 
 exports.createPages = async ({ graphql, actions, reporter }) => {
-  await createBasicPages(graphql, actions, reporter);
-};
+  await createBasicPages(graphql, actions, reporter)
+}
