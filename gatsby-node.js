@@ -1,38 +1,37 @@
-// async function createBasicPages(graphql, actions, reporter) {
-//   const { createPage } = actions;
-//   const result = await graphql(`
-//     {
-//       allContentfulPage(filter: { node_locale: { eq: "en" } }) {
-//         edges {
-//           node {
-//             id
-//             slug
-//             title
-//           }
-//         }
-//       }
-//     }
-//   `);
+async function createBasicPages(graphql, actions, reporter) {
+  const { createPage } = actions;
+  const result = await graphql(`
+    {
+      posts: allContentfulPost(filter: { node_locale: { eq: "en" } }) {
+        edges {
+          node {
+            id
+            slug
+            title
+          }
+        }
+      }
+    }
+  `);
 
-//   if (result.errors) throw result.errors;
+  if (result.errors) throw result.errors;
 
-//   const pageEdges = (result.data.allContentfulPage || {}).edges || [];
+  const postEdges = (result.data.posts || {}).edges || [];
 
-//   pageEdges.forEach(edge => {
-//     const { id, title, slug } = edge.node;
-//     const finalSlug = slug === "home" ? "/" : `/${slug}/`;
-//     const path = finalSlug;
+  postEdges.forEach(post => {
+    const { id, title, slug } = post.node;
+    const path = `/blog/${slug}`;
 
-//     reporter.info(`Creating blog post page: ${title}`);
+    reporter.info(`Creating blog post page: ${title}`);
 
-//     createPage({
-//       path,
-//       component: require.resolve("./src/templates/home.js"),
-//       context: { id }
-//     });
-//   });
-// }
+    createPage({
+      path,
+      component: require.resolve("./src/templates/blog-post.jsx"),
+      context: { id }
+    });
+  });
+}
 
-// exports.createPages = async ({ graphql, actions, reporter }) => {
-//   await createBasicPages(graphql, actions, reporter);
-// };
+exports.createPages = async ({ graphql, actions, reporter }) => {
+  await createBasicPages(graphql, actions, reporter);
+};
