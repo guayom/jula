@@ -1,9 +1,9 @@
 import React from "react"
-import Wrapper from "../Layout/Wrapper"
 import { Box, Flex } from "rebass"
-import Nav from "./Nav"
 import ReactSVG from "react-svg"
 import Link from "gatsby-link"
+import Nav from "./Nav"
+import Wrapper from "../Layout/Wrapper"
 
 const Navbar = () => (
   <Wrapper>

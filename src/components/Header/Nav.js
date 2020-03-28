@@ -9,11 +9,11 @@ const NavLinks = [
 ]
 
 export default () => (
-  <React.Fragment>
+  <>
     {NavLinks.map((link) => (
       <HeaderLink key={link.key} to={`/${link.key}/`}>
         {link.title}
       </HeaderLink>
     ))}
-  </React.Fragment>
+  </>
 )

@@ -1,10 +1,10 @@
 import React from "react"
 import * as PropTypes from "prop-types"
 import { graphql } from "gatsby"
+import { Box, Flex } from "rebass"
 import Layout from "../components/Layout"
 import ContentBlocks from "../components/ContentBlocks"
 import Wrapper from "../components/Layout/Wrapper"
-import { Box, Flex } from "rebass"
 import PageTitle from "../components/page-title"
 import MarkdownRender from "../components/markdown-render"
 

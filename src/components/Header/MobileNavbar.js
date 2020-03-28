@@ -1,6 +1,6 @@
 import React from "react"
-import Nav from "./Nav"
 import { Box, Flex } from "rebass"
+import Nav from "./Nav"
 import Wrapper from "../Layout/Wrapper"
 
 export default () => (

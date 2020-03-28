@@ -8,6 +8,6 @@ const Icons = {
 }
 
 export default ({ title }) => {
-  const Icon = Icons[title] || Icons["Default"]
+  const Icon = Icons[title] || Icons.Default
   return <Icon size={20} />
 }

@@ -1,7 +1,7 @@
 import React from "react"
 import { Box } from "rebass"
-import Navbar from "./Navbar"
 import { motion, AnimatePresence } from "framer-motion"
+import Navbar from "./Navbar"
 
 const StickyHeader = ({ isVisible }) => {
   return (

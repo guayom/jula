@@ -1,7 +1,7 @@
 import React from "react"
 import { Flex, Text } from "rebass"
-import Wrapper from "../../Layout/Wrapper"
 import BackgroundImage from "gatsby-background-image"
+import Wrapper from "../../Layout/Wrapper"
 
 export default ({ title, image, description }) => (
   <Flex
@@ -15,7 +15,7 @@ export default ({ title, image, description }) => (
     <BackgroundImage
       Tag="section"
       fluid={image.fluid}
-      backgroundColor={`#040e18`}
+      backgroundColor="#040e18"
       style={{
         backgroundPosition: "20% 30%",
         width: "100%",

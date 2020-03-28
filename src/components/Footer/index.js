@@ -1,8 +1,8 @@
 import React from "react"
+import { Box, Flex, Text } from "rebass"
 import Form from "./Form"
 import Profiles from "./Profiles"
 import Wrapper from "../Layout/Wrapper"
-import { Box, Flex, Text } from "rebass"
 
 export default () => {
   return (

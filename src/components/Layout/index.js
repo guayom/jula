@@ -1,13 +1,14 @@
 import React from "react"
+import { ThemeProvider } from "theme-ui"
+import { useInView } from "react-intersection-observer"
 import Header from "../Header"
 import StickyHeader from "../Header/StickyHeader"
 import Footer from "../Footer"
-import { ThemeProvider } from "theme-ui"
 import theme from "./theme"
 import MobileNavbar from "../Header/MobileNavbar"
-import { useInView } from "react-intersection-observer"
 
 import "./index.css"
+
 export default ({ children, transparent }) => {
   const [ref, inView] = useInView({
     threshold: 0,

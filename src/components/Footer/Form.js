@@ -19,7 +19,9 @@ export default () => {
 
   const encode = (data) => {
     return Object.keys(data)
-      .map((key) => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+      .map(
+        (key) => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`
+      )
       .join("&")
   }
 
@@ -50,53 +52,53 @@ export default () => {
 
   if (isSubmitted && !isSubmitting) {
     return <div>Thank you! I'll be in contact shortly</div>
-  } else if (!isSubmitted && isSubmitting) {
-    return <div>Submitting...</div>
-  } else {
-    return (
-      <form
-        name="contact"
-        method="POST"
-        action="/thank-you"
-        data-netlify={true}
-        onSubmit={handleSubmit}
-      >
-        <div>
-          <Text as="label" color="white">
-            Email:
-          </Text>
-          <Box
-            as="input"
-            type="email"
-            name="email"
-            value={formal.values.email}
-            onChange={(e) => formal.change("email", e.target.value)}
-            width={1}
-            sx={{ border: "none" }}
-            mb={3}
-          />
-          {formal.errors.email && <div>{formal.errors.email}</div>}
-        </div>
-        <div>
-          <Text as="label" color="white">
-            Message:
-          </Text>
-          <Box
-            as="textarea"
-            name="message"
-            value={formal.values.message}
-            onChange={(e) => formal.change("message", e.target.value)}
-            sx={{ border: "none" }}
-            width={1}
-          />
-          {formal.errors.message && <div>{formal.errors.message}</div>}
-        </div>
-        <div>
-          <Button type="submit" bg="turquoise">
-            Send
-          </Button>
-        </div>
-      </form>
-    )
   }
+  if (!isSubmitted && isSubmitting) {
+    return <div>Submitting...</div>
+  }
+  return (
+    <form
+      name="contact"
+      method="POST"
+      action="/thank-you"
+      data-netlify
+      onSubmit={handleSubmit}
+    >
+      <div>
+        <Text as="label" color="white">
+          Email:
+        </Text>
+        <Box
+          as="input"
+          type="email"
+          name="email"
+          value={formal.values.email}
+          onChange={(e) => formal.change("email", e.target.value)}
+          width={1}
+          sx={{ border: "none" }}
+          mb={3}
+        />
+        {formal.errors.email && <div>{formal.errors.email}</div>}
+      </div>
+      <div>
+        <Text as="label" color="white">
+          Message:
+        </Text>
+        <Box
+          as="textarea"
+          name="message"
+          value={formal.values.message}
+          onChange={(e) => formal.change("message", e.target.value)}
+          sx={{ border: "none" }}
+          width={1}
+        />
+        {formal.errors.message && <div>{formal.errors.message}</div>}
+      </div>
+      <div>
+        <Button type="submit" bg="turquoise">
+          Send
+        </Button>
+      </div>
+    </form>
+  )
 }
