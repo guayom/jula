@@ -3,8 +3,9 @@ import Img from "gatsby-image"
 import { Box, Flex } from "rebass"
 import Wrapper from "../../Layout/Wrapper"
 import DonateButton from "../../Buttons/DonateButton"
+import MarkdownRender from "../../markdown-render"
 
-export default ({ image, body, link, callToAction, linkToProfile }) => (
+export default ({ image, body }) => (
   <Wrapper>
     <Flex
       my={[4, 4, 6]}
@@ -18,9 +19,7 @@ export default ({ image, body, link, callToAction, linkToProfile }) => (
         />
       </Box>
       <Box width={[1, 1, 3 / 4]} mx={[0, 0, 0, 3]}>
-        <div
-          dangerouslySetInnerHTML={{ __html: body.childMarkdownRemark.html }}
-        />
+        <MarkdownRender {...body} />
         <DonateButton />
       </Box>
     </Flex>

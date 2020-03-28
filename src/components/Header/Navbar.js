@@ -1,7 +1,7 @@
 import React from "react"
 import { Box, Flex } from "rebass"
 import ReactSVG from "react-svg"
-import Link from "gatsby-link"
+import { Link } from "gatsby"
 import Nav from "./Nav"
 import Wrapper from "../Layout/Wrapper"
 

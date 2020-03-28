@@ -39,7 +39,8 @@ export default () => {
             setIsSubmitting(false)
             resolve()
           })
-          .catch((error) => alert(error))
+          // TODO handle this error
+          .catch((error) => error)
       })
     },
   })
@@ -51,7 +52,7 @@ export default () => {
   }
 
   if (isSubmitted && !isSubmitting) {
-    return <div>Thank you! I'll be in contact shortly</div>
+    return <div>Thank you! I will be in contact shortly</div>
   }
   if (!isSubmitted && isSubmitting) {
     return <div>Submitting...</div>

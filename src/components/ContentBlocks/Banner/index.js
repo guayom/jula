@@ -2,6 +2,7 @@ import React from "react"
 import Img from "gatsby-image"
 import { Box, Flex, Text } from "rebass"
 import Wrapper from "../../Layout/Wrapper"
+import MarkdownRender from "../../markdown-render"
 
 export default ({ title, image, description }) => (
   <Flex
@@ -33,13 +34,7 @@ export default ({ title, image, description }) => (
           {title}
         </Text>
       )}
-      {description && (
-        <div
-          dangerouslySetInnerHTML={{
-            __html: description.childMarkdownRemark.html,
-          }}
-        />
-      )}
+      {description && <MarkdownRender {...description} />}
     </Wrapper>
   </Flex>
 )

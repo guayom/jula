@@ -1,16 +1,10 @@
-/**
- * Implement Gatsby's Browser APIs in this file.
- *
- * See: https://www.gatsbyjs.org/docs/browser-apis/
- */
+require("typeface-montserrat")
 
- // You can delete this file if you're not using it
- require("typeface-montserrat"); 
- 
- export const onClientEntry = () => {
-   // IntersectionObserver polyfill for gatsby-background-image (Safari, IE)
-   if (typeof window.IntersectionObserver === `undefined`) {
-     import(`intersection-observer`);
-     console.log(`# IntersectionObserver is polyfilled!`);
-   }
- };
+export const onClientEntry = () => {
+  // IntersectionObserver polyfill for gatsby-background-image (Safari, IE)
+  if (typeof window.IntersectionObserver === `undefined`) {
+    // TODO stop ignoring this file from eslint just for this line
+    import(`intersection-observer`)
+    console.log(`# IntersectionObserver is polyfilled!`)
+  }
+}

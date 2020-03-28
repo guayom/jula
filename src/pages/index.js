@@ -1,26 +1,15 @@
 import React from "react"
-import * as PropTypes from "prop-types"
 import { graphql } from "gatsby"
 import Layout from "../components/Layout"
 import ContentBlocks from "../components/ContentBlocks"
 
-const propTypes = {
-  data: PropTypes.object.isRequired,
+const IndexPage = ({ data: { page } }) => {
+  return (
+    <Layout transparent>
+      <ContentBlocks contentBlocks={page.contentBlocks} />
+    </Layout>
+  )
 }
-
-class IndexPage extends React.Component {
-  render() {
-    const { page } = this.props.data
-
-    return (
-      <Layout transparent>
-        <ContentBlocks contentBlocks={page.contentBlocks} />
-      </Layout>
-    )
-  }
-}
-
-IndexPage.propTypes = propTypes
 
 export default IndexPage
 

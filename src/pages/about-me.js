@@ -1,5 +1,4 @@
 import React from "react"
-import * as PropTypes from "prop-types"
 import { graphql } from "gatsby"
 import { Box, Flex } from "rebass"
 import Layout from "../components/Layout"
@@ -7,10 +6,6 @@ import ContentBlocks from "../components/ContentBlocks"
 import Wrapper from "../components/Layout/Wrapper"
 import PageTitle from "../components/page-title"
 import MarkdownRender from "../components/markdown-render"
-
-const propTypes = {
-  data: PropTypes.object.isRequired,
-}
 
 const AboutPage = ({ data }) => {
   const { page } = data
@@ -34,8 +29,6 @@ const AboutPage = ({ data }) => {
     </Layout>
   )
 }
-
-AboutPage.propTypes = propTypes
 
 export default AboutPage
 

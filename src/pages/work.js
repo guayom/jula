@@ -1,31 +1,20 @@
 import React from "react"
-import * as PropTypes from "prop-types"
 import { graphql } from "gatsby"
 import Layout from "../components/Layout"
 import Wrapper from "../components/Layout/Wrapper"
 import PageTitle from "../components/page-title"
+import MarkdownRender from "../components/markdown-render"
 
-const propTypes = {
-  data: PropTypes.object.isRequired,
-}
-
-const WorkPage = ({ data }) => {
-  const { page } = data
+const WorkPage = ({ data: { page } }) => {
   return (
     <Layout>
       <Wrapper>
         <PageTitle>{page.title}</PageTitle>
-        <div
-          dangerouslySetInnerHTML={{
-            __html: page.description.childMarkdownRemark.html,
-          }}
-        />
+        <MarkdownRender {...page.description} />
       </Wrapper>
     </Layout>
   )
 }
-
-WorkPage.propTypes = propTypes
 
 export default WorkPage
 

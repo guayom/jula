@@ -18,7 +18,7 @@ module.exports = {
             "jsx": true
         },
         "ecmaVersion": 2018,
-        "sourceType": "module"
+        "sourceType": "module",
     },
     "plugins": [
         "react",
@@ -36,6 +36,9 @@ module.exports = {
             }
         ],
         "react/prop-types": 0,
+        "react/jsx-props-no-spreading": "off",
+        "no-underscore-dangle": "off",
+        "react/no-unescaped-entities": "off",
         "no-unused-vars": [
             "error",
             {
