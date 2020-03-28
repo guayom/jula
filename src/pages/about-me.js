@@ -6,6 +6,7 @@ import ContentBlocks from "../components/ContentBlocks";
 import Wrapper from "../components/Layout/Wrapper";
 import { Box, Flex } from "rebass";
 import PageTitle from "../components/page-title";
+import MarkdownRender from "../components/markdown-render";
 
 const propTypes = {
   data: PropTypes.object.isRequired
@@ -23,11 +24,7 @@ const AboutPage = ({ data }) => {
           my={4}
         >
           <Box mb={4} mx={[0, 0, 0, 3]} width={[1, 1, 1, 2 / 3]}>
-            <div
-              dangerouslySetInnerHTML={{
-                __html: page.description.childMarkdownRemark.html
-              }}
-            />
+            <MarkdownRender { ...page.description } />
           </Box>
           <Box width={[1, 1, 1, 1 / 3]} mx={[0, 0, 0, 3]}>
             <ContentBlocks contentBlocks={page.contentBlocks} />
