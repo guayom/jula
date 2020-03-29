@@ -1,18 +1,33 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
 import Img from "gatsby-image"
+import {
+  SummaryContainer,
+  SummaryTitle,
+  SummaryPositioner,
+  SummaryOverlay,
+} from "."
 
 export default ({ title, slug, cover }) => {
   const url = `/blog/${slug}`
   return (
-    <h2>
-      <Link to={url}>{title}</Link>
-      {cover.file.contentType === "video/mp4" ? (
-        <>VIDEOOOOOO</>
-      ) : (
-        <Img fluid={cover.fluid} alt={title} />
-      )}
-    </h2>
+    <Link to={url}>
+      <SummaryContainer>
+        <SummaryPositioner zIndex={0}>
+          {cover.file.contentType === "video/mp4" ? (
+            <>VIDEOOOOOO</>
+          ) : (
+            <Img fluid={cover.fluid} alt={title} />
+          )}
+        </SummaryPositioner>
+        <SummaryPositioner zIndex={1}>
+          <SummaryOverlay />
+        </SummaryPositioner>
+        <SummaryPositioner zIndex={2}>
+          <SummaryTitle>{title}</SummaryTitle>
+        </SummaryPositioner>
+      </SummaryContainer>
+    </Link>
   )
 }
 
