@@ -41,8 +41,8 @@ export default ({
 }
 
 export const blogPostQuery = graphql`
-  query blogPostQuery($slug: String) {
-    post: contentfulPost(slug: { eq: $slug }) {
+  query blogPostQuery($id: String) {
+    post: contentfulPost(id: { eq: $id }) {
       ...BlogPost
     }
   }
