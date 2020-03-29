@@ -5,11 +5,14 @@ import Layout from "../components/Layout"
 import ContentBlocks from "../components/ContentBlocks"
 import Wrapper from "../components/Layout/Wrapper"
 import DonateButton from "../components/Buttons/DonateButton"
+import MarkdownRender from "../components/markdown-render"
+import PostsAndLinks from "../components/exxpedition/posts-and-links"
 
 const IndexPage = ({ data: { page, logo } }) => {
   return (
     <Layout transparent>
       <ContentBlocks contentBlocks={page.contentBlocks} />
+      <PostsAndLinks />
       {page.description && (
         <Wrapper>
           <Flex
@@ -38,11 +41,7 @@ const IndexPage = ({ data: { page, logo } }) => {
             </Flex>
 
             <Box width={[1, 1, 1, 3 / 4]} mx={3}>
-              <Box
-                dangerouslySetInnerHTML={{
-                  __html: page.description.childMarkdownRemark.html,
-                }}
-              />
+              <MarkdownRender {...page.description} />
               <DonateButton />
             </Box>
           </Flex>

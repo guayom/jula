@@ -23,11 +23,7 @@ export const blogIndexQuery = graphql`
     posts: allContentfulPost(filter: { node_locale: { eq: "en" } }) {
       edges {
         node {
-          id
-          title
-          tags
-          slug
-          node_locale
+          ...BlogPost
         }
       }
     }
