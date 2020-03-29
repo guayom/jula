@@ -31,7 +31,9 @@ export default () => {
   const Entries = [
     ...processData(data.posts, "post"),
     ...processData(data.links, "link"),
-  ]
+  ].sort((a, b) => {
+    return new Date(b.date) - new Date(a.date)
+  })
 
   return (
     <Grid>

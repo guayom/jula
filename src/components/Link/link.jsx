@@ -34,6 +34,7 @@ export const query = graphql`
     title
     tags
     link
+    createdAt
     cover {
       fluid {
         ...GatsbyContentfulFluid

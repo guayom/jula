@@ -39,6 +39,7 @@ export const query = graphql`
     title
     tags
     slug
+    createdAt
     body {
       json
     }
