@@ -3,14 +3,7 @@ import { Text } from "rebass"
 
 export default ({ children }) => {
   return (
-    <Text
-      color="white"
-      fontWeight="bold"
-      px="4"
-      fontSize="3em"
-      as="h2"
-      sx={{ position: "absolute" }}
-    >
+    <Text color="white" fontWeight="bold" px="5" pb="4" fontSize="4em" as="h2">
       {children}
     </Text>
   )

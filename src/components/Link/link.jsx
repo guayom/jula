@@ -6,6 +6,7 @@ import {
   SummaryTitle,
   SummaryPositioner,
   SummaryOverlay,
+  SummaryButton,
 } from "../Blog"
 
 export default ({ title, link, cover }) => {
@@ -20,6 +21,7 @@ export default ({ title, link, cover }) => {
         </SummaryPositioner>
         <SummaryPositioner zIndex={2}>
           <SummaryTitle>{title}</SummaryTitle>
+          <SummaryButton>Visit link</SummaryButton>
         </SummaryPositioner>
       </SummaryContainer>
     </a>

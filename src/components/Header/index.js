@@ -17,6 +17,7 @@ const Header = ({ transparent, innerRef }) => {
       py={3}
       style={transparent ? transparentStyles : defaultStyles}
       ref={innerRef}
+      sx={{ zIndex: 99 }}
     >
       <Navbar />
     </Box>

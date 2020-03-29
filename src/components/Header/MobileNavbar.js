@@ -12,6 +12,7 @@ export default () => (
       bottom: 0,
       left: 0,
       display: ["flex", "flex", "flex", "none"],
+      zIndex: 9,
     }}
     width="100%"
   >

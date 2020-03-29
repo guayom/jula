@@ -6,7 +6,7 @@ export default ({ children }) => {
     <Box
       sx={{
         position: "relative",
-        paddingTop: "100%",
+        paddingTop: "80%",
         background: "#000",
         "&:hover .overlay": {
           opacity: 0.5,
