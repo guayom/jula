@@ -39,6 +39,9 @@ export const query = graphql`
     title
     tags
     slug
+    body {
+      json
+    }
     cover {
       file {
         contentType
