@@ -11,7 +11,8 @@ export default ({ children, zIndex = 1 }) => {
         left: 0,
         width: "100%",
         height: "100%",
-        alignItems: "flex-end",
+        justifyContent: "flex-end",
+        flexDirection: "column",
         "& > .gatsby-image-wrapper": {
           width: "100%",
           height: "100%",
