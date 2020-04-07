@@ -20,7 +20,6 @@ export default ({ image, body }) => (
       </Box>
       <Box width={[1, 1, 3 / 4]} mx={[0, 0, 0, 3]}>
         <MarkdownRender {...body} />
-        <DonateButton />
       </Box>
     </Flex>
   </Wrapper>
