@@ -11,12 +11,12 @@ export default ({ data: { posts } }) => {
     <Layout>
       <Wrapper>
         <PageTitle>Blog</PageTitle>
-        <PostsAndLinksGrid>
-          {posts.edges.map(({ node }) => (
-            <Summary key={node.id} {...node} />
-          ))}
-        </PostsAndLinksGrid>
       </Wrapper>
+      <PostsAndLinksGrid>
+        {posts.edges.map(({ node }) => (
+          <Summary key={node.id} {...node} />
+        ))}
+      </PostsAndLinksGrid>
     </Layout>
   )
 }
