@@ -6,9 +6,11 @@ const PostsAndLinksGrid = styled.div`
   padding: 0 ${(p) => p.theme.space[3]}px;
 
   @media (min-width: ${(p) => p.theme.breakpoints[1]}) {
+    padding: 0;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 40px;
+    margin-bottom: ${(p) => p.theme.space[5]}px;
   }
 `
 
