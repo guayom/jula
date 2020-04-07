@@ -11,10 +11,13 @@ const TitleContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  transform: translateY(200px);
   transition: transform 0.5s ease;
   padding: 2em 0;
   z-index: 2;
+
+  @media (min-width: ${(p) => p.theme.breakpoints[1]}) {
+    transform: translateY(200px);
+  }
 `
 
 export default ({ children }) => {

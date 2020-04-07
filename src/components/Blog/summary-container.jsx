@@ -18,6 +18,7 @@ export default ({ children }) => {
           transform: "translateY(0)",
         },
       }}
+      mb={[3, 0]}
     >
       {children}
     </Box>

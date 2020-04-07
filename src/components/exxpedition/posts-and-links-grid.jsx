@@ -1,17 +1,15 @@
-import React from "react"
-import { Box } from "rebass"
+import styled from "@emotion/styled"
 
-export default ({ children }) => (
-  <Box
-    my="20px"
-    mx="auto"
-    sx={{
-      display: "grid",
-      gridTemplateColumns: "repeat(2, 1fr)",
-      gridGap: "40px",
-      maxWidth: "1300px",
-    }}
-  >
-    {children}
-  </Box>
-)
+const PostsAndLinksGrid = styled.div`
+  margin: 20px auto;
+  max-width: 1300px;
+  padding: 0 ${(p) => p.theme.space[3]}px;
+
+  @media (min-width: ${(p) => p.theme.breakpoints[1]}) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 40px;
+  }
+`
+
+export default PostsAndLinksGrid
