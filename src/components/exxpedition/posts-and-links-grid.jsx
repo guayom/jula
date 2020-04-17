@@ -1,17 +1,48 @@
+import React from "react"
 import styled from "@emotion/styled"
+import Masonry from "react-masonry-css"
 
-const PostsAndLinksGrid = styled.div`
+const gutter = 30
+const breakpointColumnsObj = {
+  default: 2,
+  700: 2,
+  500: 1,
+}
+
+const Container = styled.div`
   margin: 20px auto;
-  max-width: 1300px;
-  padding: 0 ${(p) => p.theme.space[3]}px;
 
-  @media (min-width: ${(p) => p.theme.breakpoints[1]}) {
-    padding: 0;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap: 40px;
-    margin-bottom: ${(p) => p.theme.space[5]}px;
+  .my-masonry-grid {
+    display: flex;
+    margin-left: -${gutter}px; /* gutter size offset */
+    width: auto;
+  }
+
+  .my-masonry-grid_column {
+    padding-left: ${gutter}px; /* gutter size */
+    background-clip: padding-box;
+  }
+
+  /* Style your items */
+  .my-masonry-grid_column .item {
+    /* change div to reference your elements you put in <Masonry> */
+    background: grey;
+    margin-bottom: ${gutter}px;
   }
 `
+
+const PostsAndLinksGrid = ({ children }) => {
+  return (
+    <Container>
+      <Masonry
+        breakpointCols={breakpointColumnsObj}
+        className="my-masonry-grid"
+        columnClassName="my-masonry-grid_column"
+      >
+        {children}
+      </Masonry>
+    </Container>
+  )
+}
 
 export default PostsAndLinksGrid
