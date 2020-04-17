@@ -1,6 +1,11 @@
-import React from "react"
-import { Box } from "rebass"
+import styled from "@emotion/styled"
 
-export default ({ children }) => {
-  return <Box className="item">{children}</Box>
-}
+const Container = styled.div`
+  &:hover {
+    .title {
+      transform: translateY(0);
+    }
+  }
+`
+
+export default Container

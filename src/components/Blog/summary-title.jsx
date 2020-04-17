@@ -16,13 +16,13 @@ const TitleContainer = styled.div`
   z-index: 2;
 
   @media (min-width: ${(p) => p.theme.breakpoints[1]}) {
-    transform: translateY(200px);
+    transform: translateY(${(props) => (props.active ? 0 : 200)}px);
   }
 `
 
-export default ({ children }) => {
+export default ({ children, active }) => {
   return (
-    <TitleContainer className="title">
+    <TitleContainer className="title" active={active}>
       <Text
         color="white"
         fontWeight="bold"

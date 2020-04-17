@@ -1,15 +1,12 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
-import Img from "gatsby-image"
-import { SummaryContainer } from "."
+import SummaryItem from "./summary-item"
 
 export default ({ title, slug, cover }) => {
   const url = `/blog/${slug}`
   return (
     <Link to={url}>
-      <SummaryContainer>
-        <Img fluid={cover.fluid} alt={title} />
-      </SummaryContainer>
+      <SummaryItem cover={cover} title={title} />
     </Link>
   )
 }

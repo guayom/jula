@@ -28,6 +28,7 @@ const Container = styled.div`
     /* change div to reference your elements you put in <Masonry> */
     background: grey;
     margin-bottom: ${gutter}px;
+    position: relative;
   }
 `
 
