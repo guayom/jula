@@ -14,9 +14,9 @@ const IndexPage = ({ data: { page, logo } }) => {
       <Box my="20px">
         <Wrapper>
           {page.description && <MarkdownRender {...page.description} />}
+          <PostsAndLinks />
         </Wrapper>
       </Box>
-      <PostsAndLinks />
     </Layout>
   )
 }
