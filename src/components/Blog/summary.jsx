@@ -18,8 +18,11 @@ export const query = graphql`
     tags
     slug
     createdAt
-    body {
-      json
+    coverInArticle
+    content {
+      childMarkdownRemark {
+        html
+      }
     }
     cover {
       file {

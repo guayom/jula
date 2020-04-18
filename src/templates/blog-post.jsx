@@ -1,40 +1,34 @@
 import React from "react"
-import { BLOCKS, MARKS } from "@contentful/rich-text-types"
-import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 import { graphql } from "gatsby"
 import Img from "gatsby-image"
 import { Box } from "rebass"
+import styled from "@emotion/styled"
 import PageTitle from "../components/page-title"
 import Wrapper from "../components/Layout/Wrapper"
 import Layout from "../components/Layout"
+import MarkdownRender from "../components/markdown-render"
 
-const Bold = ({ children }) => <span className="bold">{children}</span>
-const Text = ({ children }) => <p className="align-center">{children}</p>
-
-const options = {
-  renderMark: {
-    [MARKS.BOLD]: (text) => <Bold>{text}</Bold>,
-  },
-  renderNode: {
-    [BLOCKS.PARAGRAPH]: (node, children) => <Text>{children}</Text>,
-  },
-}
+const Container = styled.div`
+  .embed-container {
+    margin-bottom: 20px;
+  }
+`
 
 export default ({
   data: {
-    post: { title, body, cover },
+    post: { title, cover, content, coverInArticle },
   },
 }) => {
   return (
     <Layout>
       <Wrapper>
         <PageTitle>{title}</PageTitle>
-        {cover && cover.fluid ? (
+        {cover && coverInArticle && cover.fluid ? (
           <Box mb={4}>
             <Img fluid={cover.fluid} alt={title} />
           </Box>
         ) : null}
-        {documentToReactComponents(body.json, options)}
+        <Container>{content && <MarkdownRender {...content} />}</Container>
       </Wrapper>
     </Layout>
   )
